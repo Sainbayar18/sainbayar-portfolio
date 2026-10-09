@@ -12,6 +12,18 @@ export const profile = {
   github: "",
   linkedin: "",
   resume: "",
+  // Public Upwork snapshot. Update these details when your profile changes.
+  upwork: {
+    url: "https://www.upwork.com/freelancers/~01dd7b64a2f383366e",
+    name: "Munkhzorig S.",
+    photo: "/upwork-profile.jpg",
+    title: "Web Development | JavaScript, Java, HTML, Programming Languages",
+    location: { en: "Tokyo, Japan", mn: "Токио, Япон" },
+    jobSuccess: 100,
+    totalJobs: 10,
+    skills: ["JavaScript", "Java", "HTML"],
+    updated: { en: "October 2026", mn: "2026 оны 10-р сар" },
+  },
   bio: {
     en: "I enjoy turning ideas into considered digital experiences. This is my space to share what I build, what I learn, and where I’m heading next.",
     mn: "Би санаагаа хэрэгтэй, ойлгомжтой дижитал бүтээл болгох дуртай. Энэ бол хийж буй ажил, сурч байгаа зүйл, цаашдын зорилгоо хуваалцах миний орон зай.",

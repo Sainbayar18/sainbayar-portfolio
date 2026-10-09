@@ -23,6 +23,7 @@ npm start
 Edit **`src/lib/portfolio.ts`**:
 
 - `profile`: name, role, biography, email, GitHub, LinkedIn, and résumé URL.
+- `profile.upwork`: public profile URL, display name, photo, title, and manually maintained stats. The initial snapshot is from October 9, 2026; update it when your Upwork profile changes.
 - `projects`: project names, descriptions in both languages, tools, features, and real project links.
 - `journey`: the current process section. Replace it with your verified professional experience, dates, education, or certifications.
 - `stack`: your actual tools and technologies.
@@ -36,7 +37,7 @@ Add résumé files to `public/` and set `profile.resume` to `/resume.pdf`. Blank
 - `/`: introduction, selected projects, and a short biography.
 - `/projects`: category filters, search, and reset for empty results.
 - `/projects/[slug]`: project overview and links.
-- `/experience`: process timeline and toolkit.
+- `/experience`: process timeline, Upwork profile card, and toolkit.
 - `/about`: biography and principles.
 - `/contact`: browser-side message preparation.
 - Custom 404, page metadata, and favicon.
@@ -51,4 +52,4 @@ With `profile.email` empty, the form **copies a message** and explicitly says it
 
 Theme tokens and responsive layouts are in `src/app/globals.css`. Project thumbnails and the orbit illustration are original SVG/CSS artwork in `src/components/visuals.tsx`; no reference-site code or assets are used. Google Fonts use `display=swap`, with system font fallbacks.
 
-This is a local project; it has not been published. To deploy later, import the repository into Vercel as a Next.js project, using `npm run build`. No environment variables are required.
+Live at **https://sainbayar-portfolio.vercel.app**. Vercel deploys automatically from the GitHub repository’s `main` branch. No environment variables are required.

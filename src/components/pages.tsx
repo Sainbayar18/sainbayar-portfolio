@@ -23,6 +23,7 @@ import {
 import { usePreferences } from "./preferences";
 import { ProjectCard } from "./project-card";
 import { ProjectArt, OrbitArt } from "./visuals";
+import { UpworkCard } from "./upwork-card";
 function PageHeading({
   index,
   label,
@@ -184,6 +185,7 @@ export function Experience() {
           </div>
         </section>
         <aside className="experience-aside">
+          <UpworkCard />
           <div className="skill-card">
             <p className="eyebrow">
               {t({ en: "MY TOOLKIT", mn: "МИНИЙ ХЭРЭГСЛҮҮД" })}

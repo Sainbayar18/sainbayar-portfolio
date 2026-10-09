@@ -138,6 +138,13 @@ export function Footer() {
           </Link>
         </div>
         <div className="footer-socials">
+          <a
+            href={profile.upwork.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Upwork <ArrowUpRight size={14} aria-hidden="true" />
+          </a>
           {profile.github ? (
             <a
               href={profile.github}
