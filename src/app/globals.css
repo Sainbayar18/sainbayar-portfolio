@@ -1285,6 +1285,20 @@ h2 {
   letter-spacing: -1px;
   color: var(--accent);
 }
+.upwork-stats .upwork-earnings {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  margin-top: 3px;
+}
+.upwork-earnings dd {
+  margin-top: 0;
+  font-size: 26px;
+}
 .upwork-skills {
   margin-top: 20px;
 }

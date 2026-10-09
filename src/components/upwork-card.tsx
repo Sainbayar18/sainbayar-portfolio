@@ -48,6 +48,10 @@ export function UpworkCard() {
           <dt>{t({ en: "Total jobs", mn: "Нийт ажил" })}</dt>
           <dd>{upwork.totalJobs}</dd>
         </div>
+        <div className="upwork-earnings">
+          <dt>{t({ en: "Total earnings", mn: "Нийт орлого" })}</dt>
+          <dd>{upwork.totalEarnings}</dd>
+        </div>
       </dl>
       <div className="tag-list upwork-skills">
         {upwork.skills.map((skill) => (

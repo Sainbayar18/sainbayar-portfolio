@@ -21,6 +21,7 @@ export const profile = {
     location: { en: "Tokyo, Japan", mn: "Токио, Япон" },
     jobSuccess: 100,
     totalJobs: 10,
+    totalEarnings: "$300+",
     skills: ["JavaScript", "Java", "HTML"],
     updated: { en: "October 2026", mn: "2026 оны 10-р сар" },
   },
