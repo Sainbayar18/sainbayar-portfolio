@@ -55,8 +55,41 @@ export const stack = [
 ];
 export const projects = [
   {
-    slug: "mangos",
+    slug: "lms-tca",
     number: "01",
+    name: "LMS TCA",
+    category: "Web",
+    art: "lms-tca",
+    tags: ["LMS", "E-learning", "Web app"],
+    sample: false,
+    description: {
+      en: "An e-learning portal for Mongol Kosen, with a Mongolian interface and teacher, student, and administrator sign-in options.",
+      mn: "Монгол Коосэны цахим сургалтын вэб. Монгол интерфэйс, багш, оюутан, админы нэвтрэх сонголттой.",
+    },
+    overview: {
+      en: "LMS TCA is an education-focused web project with a Mongolian-language entry screen for Mongol Kosen Technology College. Its sign-in interface gives teachers, students, and administrators separate role choices.",
+      mn: "LMS TCA нь Монгол Коосэн Технологийн коллежийн нэр, таних тэмдэгтэй цахим сургалтын вэб төсөл. Нэвтрэх интерфэйс нь багш, оюутан, админ гэсэн тусдаа үүргийн сонголттой.",
+    },
+    features: {
+      en: [
+        "Mongolian-language e-learning entry screen",
+        "Teacher, student, and administrator role choices",
+        "Username and password sign-in interface",
+        "College branding and a dedicated education portal",
+      ],
+      mn: [
+        "Монгол хэл дээрх цахим сургалтын нүүр",
+        "Багш, оюутан, админы үүрэг сонгох",
+        "Хэрэглэгчийн нэр, нууц үгээр нэвтрэх интерфэйс",
+        "Коллежийн нэр, таних тэмдэгтэй сургалтын портал",
+      ],
+    },
+    liveUrl: "https://lms-tca.vercel.app/",
+    sourceUrl: "",
+  },
+  {
+    slug: "mangos",
+    number: "02",
     name: "Mangos",
     category: "Web",
     art: "mangos",
@@ -89,7 +122,7 @@ export const projects = [
   },
   {
     slug: "personal-portfolio",
-    number: "02",
+    number: "03",
     name: "Personal portfolio",
     category: "Web",
     art: "portfolio",
@@ -122,7 +155,7 @@ export const projects = [
   },
   {
     slug: "focus-workspace",
-    number: "03",
+    number: "04",
     name: "Focus workspace",
     category: "UI",
     art: "focus",
@@ -153,7 +186,7 @@ export const projects = [
   },
   {
     slug: "steppe-studio",
-    number: "04",
+    number: "05",
     name: "Steppe studio",
     category: "UI",
     art: "steppe",

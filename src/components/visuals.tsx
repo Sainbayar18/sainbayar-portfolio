@@ -69,15 +69,17 @@ export function OrbitArt() {
   );
 }
 export function ProjectArt({ kind }: { kind: string }) {
-  if (kind === "mangos")
+  if (kind === "mangos" || kind === "lms-tca")
     return (
       <div
-        className="project-art mangos-art"
+        className={`project-art project-screenshot-art ${kind}-art`}
         aria-hidden="true"
-        style={{ background: "#fffaf3" }}
+        style={{ background: kind === "mangos" ? "#fffaf3" : "#f1f3f8" }}
       >
         <Image
-          src="/mangos-preview.jpg"
+          src={
+            kind === "mangos" ? "/mangos-preview.jpg" : "/lms-tca-preview.jpg"
+          }
           alt=""
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1180px) 60vw, 1000px"

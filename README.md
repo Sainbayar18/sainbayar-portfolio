@@ -30,7 +30,7 @@ Edit **`src/lib/portfolio.ts`**:
 - `src/components/experience.tsx`: journey, skills, and course certificates, based on the user's public Upwork profile. Update dates and details here as needed.
 - `stack`: your actual tools and technologies.
 
-**Mangos** and the portfolio itself are real projects and appear in Recent Projects. Mangos links to its deployed website and uses a screenshot of its public homepage. **Focus workspace** and **Steppe studio** are clearly labeled sample design concepts. No employers, dates, qualifications, or contact addresses have been invented.
+**LMS TCA**, **Mangos**, and the portfolio itself are real projects. The two most recent projects appear in Recent Projects; all projects remain on the Projects page. LMS TCA and Mangos link to their deployed websites and use screenshots of their public entry pages. LMS TCA's description covers its public sign-in interface. **Focus workspace** and **Steppe studio** are clearly labeled sample design concepts. No employers, dates, qualifications, or contact addresses have been invented.
 
 Add résumé files to `public/` and set `profile.resume` to `/resume.pdf`. Missing LinkedIn, Instagram, and X links appear as labeled icon placeholders. Add the URLs to `profile` to activate them.
 

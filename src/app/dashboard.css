@@ -444,7 +444,7 @@
   border-radius: 14px;
   overflow: hidden;
 }
-.project-image:has(.mangos-art) > .project-open {
+.project-image:has(.project-screenshot-art) > .project-open {
   background: #19271f;
   color: #f0f0e7;
 }
