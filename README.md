@@ -24,6 +24,7 @@ Edit **`src/lib/portfolio.ts`**:
 
 - `profile`: name, role, biography, email, GitHub, LinkedIn, and résumé URL.
 - `profile.upwork`: public profile URL, display name, photo, title, and manually maintained stats. The initial snapshot is from October 9, 2026; update it when your Upwork profile changes.
+- `profile.utest`: community profile, photo, tester rating, and lifetime earnings. The earnings snapshot is the JPY equivalent displayed by uTest on October 13, 2026, and is manually maintained.
 - `projects`: project names, descriptions in both languages, tools, features, and real project links.
 - `journey`: the current process section. Replace it with your verified professional experience, dates, education, or certifications.
 - `stack`: your actual tools and technologies.
@@ -37,7 +38,7 @@ Add résumé files to `public/` and set `profile.resume` to `/resume.pdf`. Blank
 - `/`: introduction, selected projects, and a short biography.
 - `/projects`: category filters, search, and reset for empty results.
 - `/projects/[slug]`: project overview and links.
-- `/experience`: process timeline, Upwork profile card, and toolkit.
+- `/experience`: process timeline, Upwork and uTest profile cards, and toolkit.
 - `/about`: biography and principles.
 - `/contact`: browser-side message preparation.
 - Custom 404, page metadata, and favicon.

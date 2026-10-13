@@ -25,6 +25,23 @@ export const profile = {
     skills: ["JavaScript", "Java", "HTML"],
     updated: { en: "October 2026", mn: "2026 оны 10-р сар" },
   },
+  // uTest earnings snapshot requested for publication. This is the displayed
+  // JPY equivalent, not an independently calculated currency conversion.
+  utest: {
+    url: "https://www.utest.com/profile/p2832054/about",
+    name: "Sainbayar Munkhzorig",
+    photo: "/utest-profile.jpg",
+    title: { en: "Software tester", mn: "Программ хангамжийн тестер" },
+    location: { en: "Japan", mn: "Япон" },
+    joinedYear: "2026",
+    rating: { en: "Unrated", mn: "Зэрэггүй" },
+    totalEarnings: "¥130,803.95",
+    earningsNote: {
+      en: "JPY equivalent shown by uTest.",
+      mn: "uTest дээр JPY рүү хөрвүүлж харуулсан дүн.",
+    },
+    updated: { en: "13 October 2026", mn: "2026 оны 10-р сарын 13" },
+  },
   bio: {
     en: "I enjoy turning ideas into considered digital experiences. This is my space to share what I build, what I learn, and where I’m heading next.",
     mn: "Би санаагаа хэрэгтэй, ойлгомжтой дижитал бүтээл болгох дуртай. Энэ бол хийж буй ажил, сурч байгаа зүйл, цаашдын зорилгоо хуваалцах миний орон зай.",

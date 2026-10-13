@@ -24,6 +24,7 @@ import { usePreferences } from "./preferences";
 import { ProjectCard } from "./project-card";
 import { ProjectArt, OrbitArt } from "./visuals";
 import { UpworkCard } from "./upwork-card";
+import { UtestCard } from "./utest-card";
 function PageHeading({
   index,
   label,
@@ -152,6 +153,13 @@ export function Experience() {
           mn: "Суралцах, бүтээх, хөгжих миний арга барил. Сайн бүтээл сониуч сэтгэлгээнээс эхэлнэ.",
         }}
       />
+      <section
+        className="freelance-profile-grid"
+        aria-label={t({ en: "Freelance profiles", mn: "Фриланс профайлууд" })}
+      >
+        <UpworkCard />
+        <UtestCard />
+      </section>
       <div className="experience-layout">
         <section>
           <div className="small-section-heading">
@@ -185,7 +193,6 @@ export function Experience() {
           </div>
         </section>
         <aside className="experience-aside">
-          <UpworkCard />
           <div className="skill-card">
             <p className="eyebrow">
               {t({ en: "MY TOOLKIT", mn: "МИНИЙ ХЭРЭГСЛҮҮД" })}

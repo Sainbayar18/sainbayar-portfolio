@@ -145,6 +145,9 @@ export function Footer() {
           >
             Upwork <ArrowUpRight size={14} aria-hidden="true" />
           </a>
+          <a href={profile.utest.url} target="_blank" rel="noopener noreferrer">
+            uTest <ArrowUpRight size={14} aria-hidden="true" />
+          </a>
           {profile.github ? (
             <a
               href={profile.github}
