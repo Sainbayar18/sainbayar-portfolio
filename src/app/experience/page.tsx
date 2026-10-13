@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Experience } from "@/components/pages";
+import { Experience } from "@/components/experience";
 export const metadata: Metadata = { title: "Experience" };
 export default function Page() {
   return <Experience />;

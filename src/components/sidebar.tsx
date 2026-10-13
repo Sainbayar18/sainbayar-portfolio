@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import {
-  ArrowUpRight,
   FolderKanban,
   House,
   MapPin,
@@ -19,9 +18,10 @@ import {
 } from "lucide-react";
 import { profile } from "@/lib/portfolio";
 import { usePreferences } from "./preferences";
+import { SocialLinks } from "./social-links";
 
 const navigation = [
-  { href: "/", en: "Home", mn: "Нүүр", icon: House },
+  { href: "/", en: "Dashboard", mn: "Нүүр", icon: House },
   { href: "/projects", en: "Projects", mn: "Төслүүд", icon: FolderKanban },
   { href: "/experience", en: "Experience", mn: "Туршлага", icon: Milestone },
   { href: "/about", en: "About", mn: "Миний тухай", icon: UserRound },
@@ -72,7 +72,9 @@ export function Sidebar() {
           "a[href], button:not([disabled])",
         ) ?? [],
       ).filter((element) => element.getClientRects().length > 0);
-    const focusFrame = window.requestAnimationFrame(() => focusable()[0]?.focus());
+    const focusFrame = window.requestAnimationFrame(() =>
+      focusable()[0]?.focus(),
+    );
     const keydown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         event.preventDefault();
@@ -205,22 +207,7 @@ export function Sidebar() {
             })}
           </nav>
           <div className="sidebar-bottom">
-            <div className="sidebar-platforms">
-              <a
-                href={profile.upwork.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Upwork <ArrowUpRight size={14} aria-hidden="true" />
-              </a>
-              <a
-                href={profile.utest.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                uTest <ArrowUpRight size={14} aria-hidden="true" />
-              </a>
-            </div>
+            <SocialLinks />
             <div className="sidebar-preferences">
               <button
                 className="language-button"

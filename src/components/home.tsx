@@ -1,116 +1,178 @@
 "use client";
+
+import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowDown,
-  ArrowUpRight,
-  Braces,
-  Sparkles,
-  Layers3,
-} from "lucide-react";
-import { profile, projects, stack } from "@/lib/portfolio";
+import { ArrowUpRight, Braces, MapPin, ShieldCheck } from "lucide-react";
+import { profile, projects } from "@/lib/portfolio";
 import { usePreferences } from "./preferences";
-import { OrbitArt } from "./visuals";
 import { ProjectCard } from "./project-card";
-export function Home() {
-  const { t, locale } = usePreferences();
+import { GitHubActivity } from "./github-activity";
+import { Github } from "./brand-icons";
+
+export function Home({ initialDate }: { initialDate: string }) {
+  const { t } = usePreferences();
   return (
-    <>
-      <section className="hero">
-        <div className="hero-copy">
-          <p className="eyebrow">
-            <span className="tiny-dot" />
-            {t({
-              en: "A PERSONAL SPACE ON THE INTERNET",
-              mn: "МИНИЙ ДИЖИТАЛ ОРОН ЗАЙ",
-            })}
+    <div className="page-content dashboard-page">
+      <div className="dashboard-heading">
+        <p className="eyebrow">
+          {t({ en: "SAINBAYAR’S PERSONAL SPACE", mn: "SAINBAYAR-ЫН ОРОН ЗАЙ" })}
+        </p>
+        <h1>
+          {t({ en: "Dashboard", mn: "Нүүр" })}
+          <span className="accent">.</span>
+        </h1>
+        <p>
+          {t({
+            en: "A little of what I build, test, and learn.",
+            mn: "Миний бүтээж, тестэлж, сурч буй зүйлс.",
+          })}
+        </p>
+      </div>
+      <section className="dashboard-hero">
+        <div className="dashboard-hero-copy">
+          <p className="hero-hello">
+            {t({ en: "Hey, I’m Sainbayar", mn: "Сайн уу, би Sainbayar" })}{" "}
+            <span aria-hidden="true">✳</span>
           </p>
-          <p className="hero-intro">
-            {t({ en: "Hey there, I’m", mn: "Сайн уу, намайг" })}{" "}
-            <span>{profile.name}</span>
-            {locale === "mn" ? " гэдэг." : "."}
-            <span className="wave">✳</span>
-          </p>
-          <h1>
-            {locale === "en" ? (
-              <>
-                Thoughtful code.
-                <br />
-                <span className="hero-serif">Meaningful</span>
-                <br />
-                experiences<span className="accent">.</span>
-              </>
-            ) : (
-              <>
-                Санаанаас
-                <br />
-                <span className="hero-serif">Үнэ цэнтэй</span>
-                <br />
-                бүтээл рүү<span className="accent">.</span>
-              </>
-            )}
-          </h1>
-          <p className="hero-description">
+          <h2>
+            {t({ en: "Building with care.", mn: "Нямбай бүтээнэ." })}
+            <br />
+            <span className="hero-serif">
+              {t({ en: "Testing with curiosity.", mn: "Сониучаар тестэлнэ." })}
+            </span>
+          </h2>
+          <p>
             {t({
-              en: "A curious mind with a love for clean interfaces and considered details. Learning, building, and making the web feel a little more human.",
-              mn: "Цэвэрхэн интерфэйс, нямбай шийдэлд дуртай бүтээлч сэтгэлгээ. Суралцаж, бүтээж, вэбийг хүнд илүү ойр болгоно.",
+              en: "From thoughtful interfaces to the details that make products work. A Mongolian developer and tester, growing in Japan.",
+              mn: "Ойлгомжтой интерфэйсээс бүтээгдэхүүний нарийн ажиллагаа хүртэл. Японд хөгжиж буй монгол хөгжүүлэгч, тестер.",
             })}
           </p>
           <div className="hero-buttons">
-            <Link href="/projects" className="button button-primary">
-              {t({ en: "Explore my work", mn: "Бүтээлүүдийг үзэх" })}
-              <ArrowUpRight size={19} />
-            </Link>
-            <Link href="/about" className="text-link">
-              {t({ en: "A little about me", mn: "Миний тухай" })}
+            <Link className="button button-primary" href="/projects">
+              {t({ en: "View my work", mn: "Бүтээлүүд үзэх" })}
               <ArrowUpRight size={17} />
             </Link>
+            <Link className="text-link" href="/experience">
+              {t({ en: "My journey", mn: "Миний замнал" })}
+              <ArrowUpRight size={16} />
+            </Link>
           </div>
         </div>
-        <OrbitArt />
-        <div className="hero-bottom">
-          <span>{t(profile.role)}</span>
-          <a href="#selected-work">
-            {t({ en: "SCROLL TO EXPLORE", mn: "ДООШ ҮЗЭХ" })}
-            <ArrowDown size={15} />
-          </a>
-          <span className="hero-bottom-note">
-            {t({
-              en: "INDEPENDENT MIND. OPEN POSSIBILITIES.",
-              mn: "БҮТЭЭЛЧ СЭТГЭЛГЭЭ. ШИНЭ БОЛОМЖ.",
-            })}
-          </span>
-        </div>
-      </section>
-      <section className="stack-strip" aria-label="Technology stack">
-        <span className="eyebrow">
-          {t({ en: "TOOLS I BUILD WITH", mn: "БҮТЭЭХ ХЭРЭГСЛҮҮД" })}
-        </span>
-        <div>
-          {stack.map((name, i) => (
-            <span key={name}>
-              <span className="stack-icon">
-                {["N", "⚛", "TS", "#", "⑂", "◈"][i]}
+        <div className="build-illustration" aria-hidden="true">
+          <div className="illustration-window">
+            <div className="illustration-top">
+              <span />
+              <span />
+              <span />
+              <i>sainbayar / workspace</i>
+            </div>
+            <div className="illustration-code">
+              <span className="code-comment">
+                {"// create. test. improve."}
               </span>
-              {name}
-            </span>
-          ))}
+              <p>
+                <b>const</b> developer = {"{"}
+              </p>
+              <p className="code-indent">
+                name: <em>&quot;Sainbayar&quot;</em>,
+              </p>
+              <p className="code-indent">
+                basedIn: <em>&quot;Japan&quot;</em>,
+              </p>
+              <p className="code-indent">
+                mindset: <em>&quot;stay curious&quot;</em>
+              </p>
+              <p>{"}"};</p>
+              <div className="code-rule" />
+              <p>
+                <b>build</b>(ideas);
+              </p>
+              <p>
+                <b>test</b>(theDetails);
+              </p>
+            </div>
+          </div>
+          <span className="illustration-badge">
+            <ShieldCheck size={17} /> BUILD · TEST · LEARN
+          </span>
+          <span className="illustration-orbit">✳</span>
         </div>
       </section>
-      <section className="section" id="selected-work">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">
-              <span className="section-index">01 /</span>
-              {t({ en: "MADE WITH INTENTION", mn: "СЭТГЭЛ ШИНГЭСЭН БҮТЭЭЛ" })}
-            </p>
-            <h2>
-              {t({ en: "Selected work", mn: "Онцлох бүтээлүүд" })}
-              <span className="heading-dot">.</span>
-            </h2>
+      <div className="dashboard-overview">
+        <GitHubActivity initialDate={initialDate} />
+        <section className="dashboard-card about-dashboard">
+          <div className="card-heading">
+            <h2>{t({ en: "About", mn: "Миний тухай" })}</h2>
+            <Link
+              href="/about"
+              aria-label={t({
+                en: "More about me",
+                mn: "Миний тухай дэлгэрэнгүй",
+              })}
+            >
+              <ArrowUpRight size={18} />
+            </Link>
           </div>
+          <div className="dashboard-person">
+            <Image
+              src={profile.utest.photo}
+              alt="Sainbayar"
+              width={54}
+              height={54}
+            />
+            <div>
+              <h3>{profile.name}</h3>
+              <p>{t(profile.role)}</p>
+            </div>
+          </div>
+          <p className="card-description">{t(profile.bio)}</p>
+          <dl className="about-facts">
+            <div>
+              <dt>
+                <MapPin size={15} />
+                {t({ en: "Location", mn: "Байршил" })}
+              </dt>
+              <dd>Tokyo, Japan</dd>
+            </div>
+            <div>
+              <dt>
+                <Braces size={15} />
+                {t({ en: "Focus", mn: "Чиглэл" })}
+              </dt>
+              <dd>Web · QA · AI</dd>
+            </div>
+          </dl>
+          <div className="about-profile-links">
+            <a href={profile.github} target="_blank" rel="noopener noreferrer">
+              <Github size={16} />
+              @Sainbayar18
+              <ArrowUpRight size={14} />
+            </a>
+            <a
+              href={profile.upwork.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Upwork
+              <ArrowUpRight size={14} />
+            </a>
+            <a
+              href={profile.utest.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              uTest
+              <ArrowUpRight size={14} />
+            </a>
+          </div>
+        </section>
+      </div>
+      <section className="recent-projects" id="selected-work">
+        <div className="card-heading">
+          <h2>{t({ en: "Recent Projects", mn: "Сүүлийн төслүүд" })}</h2>
           <Link href="/projects" className="text-link">
             {t({ en: "All projects", mn: "Бүх төсөл" })}
-            <ArrowUpRight size={18} />
+            <ArrowUpRight size={16} />
           </Link>
         </div>
         <div className="project-grid">
@@ -119,52 +181,26 @@ export function Home() {
           ))}
         </div>
       </section>
-      <section className="about-preview section">
+      <section className="dashboard-contact">
         <div>
           <p className="eyebrow">
-            <span className="section-index">02 /</span>
-            {t({ en: "MORE THAN THE CODE", mn: "КОДЫН ЦААНА" })}
+            {t({ en: "LET’S CONNECT", mn: "ХОЛБОГДЪЁ" })}
           </p>
           <h2>
-            {t({ en: "Curious by nature.", mn: "Сониуч зан." })}
-            <br />
-            <span className="hero-serif">
-              {t({ en: "Creative by choice.", mn: "Бүтээлч сонголт." })}
-            </span>
+            {t({ en: "Something in mind?", mn: "Ямар нэг санаа байна уу?" })}
           </h2>
-          <Link href="/about" className="text-link">
-            {t({ en: "Get to know me", mn: "Надтай танилцах" })}
-            <ArrowUpRight size={18} />
-          </Link>
+          <p>
+            {t({
+              en: "A project, a testing opportunity, or a simple hello.",
+              mn: "Төсөл, тестийн ажил эсвэл энгийн мэндчилгээ.",
+            })}
+          </p>
         </div>
-        <div className="about-preview-copy">
-          <p>{t(profile.bio)}</p>
-          <div className="value-list">
-            {[
-              {
-                icon: Braces,
-                en: "Build with purpose",
-                mn: "Зорилготой бүтээх",
-              },
-              {
-                icon: Layers3,
-                en: "Care for the details",
-                mn: "Нарийн зүйлсийг анхаарах",
-              },
-              {
-                icon: Sparkles,
-                en: "Stay a little curious",
-                mn: "Үргэлж суралцах",
-              },
-            ].map((value) => (
-              <span key={value.en}>
-                <value.icon size={19} />
-                {value[locale]}
-              </span>
-            ))}
-          </div>
-        </div>
+        <Link href="/contact" className="button button-primary">
+          {t({ en: "Get in touch", mn: "Холбогдох" })}
+          <ArrowUpRight size={18} />
+        </Link>
       </section>
-    </>
+    </div>
   );
 }

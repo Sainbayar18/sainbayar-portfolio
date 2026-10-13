@@ -48,12 +48,7 @@ export function UtestCard() {
           <dt>{t({ en: "Joined uTest", mn: "Элссэн он" })}</dt>
           <dd>{utest.joinedYear}</dd>
         </div>
-        <div className="upwork-earnings">
-          <dt>{t({ en: "Total earnings", mn: "Нийт орлого" })}</dt>
-          <dd>{utest.totalEarnings}</dd>
-        </div>
       </dl>
-      <p className="utest-earnings-note">{t(utest.earningsNote)}</p>
       <span className="upwork-cta">
         {t({ en: "View uTest profile", mn: "uTest профайл үзэх" })}
         <ArrowUpRight size={19} aria-hidden="true" />

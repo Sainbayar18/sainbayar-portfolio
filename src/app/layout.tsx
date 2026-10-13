@@ -3,13 +3,14 @@ import { Preferences } from "@/components/preferences";
 import { Header, Footer } from "@/components/shell";
 import "./globals.css";
 import "./sidebar.css";
+import "./dashboard.css";
 export const metadata: Metadata = {
   title: {
-    default: "Sainbayar — Developer & Creative Thinker",
+    default: "Sainbayar — Developer & Software Tester",
     template: "%s | Sainbayar",
   },
   description:
-    "Sainbayar’s personal space on the internet. Thoughtful code, meaningful experiences, and a curious mind.",
+    "Sainbayar’s portfolio: web development, software testing, projects, and a journey from Mongolia to Japan.",
   applicationName: "Sainbayar Portfolio",
   icons: { icon: "/icon.svg" },
 };

@@ -1,30 +1,19 @@
 "use client";
 import Link from "next/link";
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
 import {
   ArrowUpRight,
   ArrowLeft,
   Braces,
   Layers3,
   Sparkles,
-  Copy,
   Check,
-  Download,
   Search,
-  Mail,
 } from "lucide-react";
-import {
-  profile,
-  projects,
-  journey,
-  stack,
-  type Localized,
-} from "@/lib/portfolio";
+import { profile, projects, type Localized } from "@/lib/portfolio";
 import { usePreferences } from "./preferences";
 import { ProjectCard } from "./project-card";
 import { ProjectArt, OrbitArt } from "./visuals";
-import { UpworkCard } from "./upwork-card";
-import { UtestCard } from "./utest-card";
 function PageHeading({
   index,
   label,
@@ -140,117 +129,6 @@ export function Projects() {
     </div>
   );
 }
-export function Experience() {
-  const { t, locale } = usePreferences();
-  return (
-    <div className="page-content">
-      <PageHeading
-        index="02"
-        label={{ en: "ALWAYS A WORK IN PROGRESS", mn: "ҮРГЭЛЖ ХӨГЖИЖ БУЙ" }}
-        title={{ en: "The journey matters", mn: "Хөгжих замнал" }}
-        description={{
-          en: "How I approach learning, making, and growing. Good work starts with a curious mind.",
-          mn: "Суралцах, бүтээх, хөгжих миний арга барил. Сайн бүтээл сониуч сэтгэлгээнээс эхэлнэ.",
-        }}
-      />
-      <section
-        className="freelance-profile-grid"
-        aria-label={t({ en: "Freelance profiles", mn: "Фриланс профайлууд" })}
-      >
-        <UpworkCard />
-        <UtestCard />
-      </section>
-      <div className="experience-layout">
-        <section>
-          <div className="small-section-heading">
-            <h2>{t({ en: "My approach", mn: "Миний арга барил" })}</h2>
-            <span className="eyebrow">
-              {t({ en: "LEARN → BUILD → GROW", mn: "СУРАХ → БҮТЭЭХ → ХӨГЖИХ" })}
-            </span>
-          </div>
-          <div className="journey-list">
-            {journey.map((item) => (
-              <article className="journey-item" key={item.number}>
-                <span className="journey-marker">{item.number}</span>
-                <div>
-                  <p className="eyebrow accent">{t(item.label)}</p>
-                  <h3>{t(item.title)}</h3>
-                  <p>{t(item.body)}</p>
-                  <div className="tag-list">
-                    {item.tags.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-          <div className="content-note">
-            {t({
-              en: "This section currently describes my process. Professional roles, dates, education, and certifications will be added with verified details.",
-              mn: "Энэ хэсэгт одоогоор миний арга барилыг харуулав. Ажлын туршлага, огноо, боловсрол, сертификатыг бодит мэдээллээр нэмнэ.",
-            })}
-          </div>
-        </section>
-        <aside className="experience-aside">
-          <div className="skill-card">
-            <p className="eyebrow">
-              {t({ en: "MY TOOLKIT", mn: "МИНИЙ ХЭРЭГСЛҮҮД" })}
-            </p>
-            <h2>
-              {t({ en: "Small tools.", mn: "Зөв хэрэгсэл." })}
-              <br />
-              <span className="hero-serif">
-                {t({ en: "Big possibilities.", mn: "Өргөн боломж." })}
-              </span>
-            </h2>
-            <div className="toolkit-grid">
-              {stack.map((name, i) => (
-                <span key={name}>
-                  <i>{["N", "⚛", "TS", "#", "⑂", "◈"][i]}</i>
-                  {name}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className="principles-card">
-            <p className="eyebrow">
-              {t({ en: "WHAT I VALUE", mn: "МИНИЙ ҮНЭ ЦЭН" })}
-            </p>
-            {[
-              {
-                icon: Braces,
-                en: "Readable, thoughtful code",
-                mn: "Уншихад ойлгомжтой код",
-              },
-              {
-                icon: Layers3,
-                en: "Useful, accessible interfaces",
-                mn: "Хэрэгтэй, хүртээмжтэй интерфэйс",
-              },
-              {
-                icon: Sparkles,
-                en: "Continuous learning",
-                mn: "Тасралтгүй суралцах",
-              },
-            ].map((v) => (
-              <p key={v.en}>
-                <v.icon size={18} />
-                {v[locale]}
-              </p>
-            ))}
-          </div>
-          {profile.resume ? (
-            <a className="button button-primary" href={profile.resume} download>
-              <Download size={18} />
-              {t({ en: "Download résumé", mn: "CV татах" })}
-            </a>
-          ) : null}
-        </aside>
-      </div>
-    </div>
-  );
-}
 export function About() {
   const { t } = usePreferences();
   return (
@@ -340,179 +218,6 @@ export function About() {
           ))}
         </div>
       </section>
-    </div>
-  );
-}
-export function Contact() {
-  const { t, locale } = usePreferences();
-  const [status, setStatus] = useState("");
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const form = new FormData(e.currentTarget);
-    const body = `Name: ${form.get("name")}\nEmail: ${form.get("email")}\nTopic: ${form.get("topic")}\n\n${form.get("message")}`;
-    if (profile.email) {
-      window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(String(form.get("topic")))}&body=${encodeURIComponent(body)}`;
-      setStatus(
-        t({
-          en: "Your email app will open with this message. Send it from there.",
-          mn: "Имэйл апп дээр зурвас нээгдэнэ. Тэндээс илгээгээрэй.",
-        }),
-      );
-      return;
-    }
-    try {
-      await navigator.clipboard.writeText(body);
-      setStatus(
-        t({
-          en: "Message copied. Nothing has been sent. Contact details will be added soon.",
-          mn: "Зурвасыг хууллаа. Илгээгээгүй. Холбоо барих мэдээллийг удахгүй нэмнэ.",
-        }),
-      );
-    } catch {
-      setStatus(
-        t({
-          en: "Clipboard is unavailable. You can select and copy your message manually.",
-          mn: "Автоматаар хуулж чадсангүй. Зурвасаа сонгож гараар хуулна уу.",
-        }),
-      );
-    }
-  }
-  return (
-    <div className="page-content">
-      <PageHeading
-        index="04"
-        label={{
-          en: "GOOD THINGS START WITH A CONVERSATION",
-          mn: "САЙН БҮТЭЭЛ ЯРИАНААС ЭХЭЛНЭ",
-        }}
-        title={{ en: "Let’s create something", mn: "Хамтдаа бүтээцгээе" }}
-        description={{
-          en: "An idea, a question, or just a hello. I’d love to hear it.",
-          mn: "Санаа, асуулт эсвэл зүгээр л мэндчилгээ. Чиний хэлэхийг сонсох дуртай.",
-        }}
-      />
-      <div className="contact-layout">
-        <div className="contact-copy">
-          <div className="contact-symbol">✳</div>
-          <h2>
-            {t({ en: "Your next idea.", mn: "Чиний дараагийн санаа." })}
-            <br />
-            <span className="hero-serif">
-              {t({
-                en: "Our next conversation.",
-                mn: "Бидний дараагийн яриа.",
-              })}
-            </span>
-          </h2>
-          <p>
-            {t({
-              en: "Tell me a little about what you have in mind. The best place to start is a simple conversation.",
-              mn: "Бодож буй санаагаа хуваалцаарай. Энгийн ярианаас эхлэх нь хамгийн сайн.",
-            })}
-          </p>
-          <div className="contact-direct">
-            <Mail size={19} />
-            {profile.email ? (
-              <a href={`mailto:${profile.email}`}>{profile.email}</a>
-            ) : (
-              <span>
-                {t({
-                  en: "Contact details coming soon",
-                  mn: "Холбоо барих мэдээллийг удахгүй нэмнэ",
-                })}
-              </span>
-            )}
-          </div>
-          <p className="contact-hint">
-            {profile.email
-              ? t({
-                  en: "The form opens your email app. No account needed.",
-                  mn: "Маягт нь имэйл аппыг нээнэ.",
-                })
-              : t({
-                  en: "For now, you can prepare and copy a message below. It stays in your browser and is not sent.",
-                  mn: "Одоогоор зурвасаа бэлдэж хуулж болно. Зурвас browser-т хадгалагдаж, илгээгдэхгүй.",
-                })}
-          </p>
-        </div>
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-row">
-            <label>
-              {t({ en: "Your name", mn: "Таны нэр" })}
-              <input
-                name="name"
-                required
-                autoComplete="name"
-                placeholder={
-                  locale === "en" ? "What should I call you?" : "Нэрээ бичнэ үү"
-                }
-                maxLength={120}
-              />
-            </label>
-            <label>
-              {t({ en: "Email address", mn: "Имэйл хаяг" })}
-              <input
-                name="email"
-                type="email"
-                required
-                autoComplete="email"
-                placeholder="you@example.com"
-                maxLength={254}
-              />
-            </label>
-          </div>
-          <label>
-            {t({
-              en: "What’s on your mind?",
-              mn: "Ямар сэдвээр холбогдох вэ?",
-            })}
-            <select name="topic">
-              <option>
-                {t({ en: "A project idea", mn: "Төслийн санаа" })}
-              </option>
-              <option>
-                {t({ en: "An opportunity", mn: "Хамтрах боломж" })}
-              </option>
-              <option>
-                {t({ en: "Just saying hello", mn: "Мэндчилгээ" })}
-              </option>
-            </select>
-          </label>
-          <label>
-            {t({ en: "A little more detail", mn: "Дэлгэрэнгүй" })}
-            <textarea
-              name="message"
-              required
-              rows={5}
-              minLength={10}
-              maxLength={5000}
-              placeholder={t({
-                en: "Tell me about your idea, what you need, or what you’re curious about…",
-                mn: "Санаа, хэрэгцээ эсвэл сонирхож буй зүйлээ бичээрэй…",
-              })}
-            />
-          </label>
-          <button type="submit" className="button button-primary">
-            {profile.email
-              ? t({ en: "Prepare email", mn: "Имэйл бэлдэх" })
-              : t({ en: "Copy your message", mn: "Зурвас хуулах" })}
-            {profile.email ? <ArrowUpRight size={18} /> : <Copy size={18} />}
-          </button>
-          <p className="form-status" role="status">
-            {status ? (
-              <>
-                <Check size={16} />
-                {status}
-              </>
-            ) : (
-              t({
-                en: "A small hello can lead to something great.",
-                mn: "Энгийн мэндчилгээ сайхан хамтын ажлын эхлэл.",
-              })
-            )}
-          </p>
-        </form>
-      </div>
     </div>
   );
 }

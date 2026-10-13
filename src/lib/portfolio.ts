@@ -4,13 +4,15 @@ export const profile = {
   name: "Sainbayar",
   initials: "S.",
   role: {
-    en: "Developer & creative thinker",
-    mn: "Хөгжүүлэгч · Бүтээлч сэтгэлгээ",
+    en: "Developer & software tester",
+    mn: "Хөгжүүлэгч · Программ тестер",
   },
   // Add your real details here. Empty values are deliberately not rendered as links.
   email: "",
-  github: "",
+  github: "https://github.com/Sainbayar18",
   linkedin: "",
+  instagram: "",
+  x: "",
   resume: "",
   // Public Upwork snapshot. Update these details when your profile changes.
   upwork: {
@@ -21,12 +23,10 @@ export const profile = {
     location: { en: "Tokyo, Japan", mn: "Токио, Япон" },
     jobSuccess: 100,
     totalJobs: 10,
-    totalEarnings: "$300+",
     skills: ["JavaScript", "Java", "HTML"],
     updated: { en: "October 2026", mn: "2026 оны 10-р сар" },
   },
-  // uTest earnings snapshot requested for publication. This is the displayed
-  // JPY equivalent, not an independently calculated currency conversion.
+  // Public uTest profile snapshot.
   utest: {
     url: "https://www.utest.com/profile/p2832054/about",
     name: "Sainbayar Munkhzorig",
@@ -35,19 +35,23 @@ export const profile = {
     location: { en: "Japan", mn: "Япон" },
     joinedYear: "2026",
     rating: { en: "Unrated", mn: "Зэрэггүй" },
-    totalEarnings: "¥130,803.95",
-    earningsNote: {
-      en: "JPY equivalent shown by uTest.",
-      mn: "uTest дээр JPY рүү хөрвүүлж харуулсан дүн.",
-    },
     updated: { en: "13 October 2026", mn: "2026 оны 10-р сарын 13" },
   },
   bio: {
-    en: "I enjoy turning ideas into considered digital experiences. This is my space to share what I build, what I learn, and where I’m heading next.",
-    mn: "Би санаагаа хэрэгтэй, ойлгомжтой дижитал бүтээл болгох дуртай. Энэ бол хийж буй ажил, сурч байгаа зүйл, цаашдын зорилгоо хуваалцах миний орон зай.",
+    en: "I'm a Mongolian developer and software tester based in Japan. I build web interfaces, test real products, and keep learning at the intersection of code, quality, and AI.",
+    mn: "Би Японд амьдардаг монгол хөгжүүлэгч, программ хангамжийн тестер. Вэб интерфэйс бүтээж, бодит бүтээгдэхүүн тестэлж, код, чанар, хиймэл оюуны чиглэлээр тасралтгүй суралцаж байна.",
   },
 };
-export const stack = ["Next.js", "React", "TypeScript", "CSS", "Git", "Figma"];
+export const stack = [
+  "Next.js",
+  "React",
+  "TypeScript",
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "Git",
+  "Vercel",
+];
 export const projects = [
   {
     slug: "personal-portfolio",
@@ -143,38 +147,5 @@ export const projects = [
     },
     liveUrl: "",
     sourceUrl: "",
-  },
-];
-// These describe the site's process, not unverified employment or credentials.
-export const journey = [
-  {
-    number: "01",
-    label: { en: "THE FOUNDATION", mn: "СУУРЬ" },
-    title: { en: "Start with curiosity.", mn: "Сониуч зангаас эхэлнэ." },
-    body: {
-      en: "Understand the problem, explore possibilities, and learn the tools needed to bring an idea to life.",
-      mn: "Асуудлыг ойлгож, боломжуудыг судалж, санаагаа хэрэгжүүлэх хэрэгслээ суралцана.",
-    },
-    tags: ["Learning", "Exploration"],
-  },
-  {
-    number: "02",
-    label: { en: "THE PRACTICE", mn: "ДАДЛАГА" },
-    title: { en: "Make something real.", mn: "Бодит бүтээл болгоно." },
-    body: {
-      en: "Turn a direction into working interfaces. Build small, pay attention to details, and improve through iteration.",
-      mn: "Санаагаа ажилладаг интерфэйс болгоно. Жижиг алхмаар бүтээж, нарийн зүйлсийг анхаарч, сайжруулна.",
-    },
-    tags: ["Design", "Development"],
-  },
-  {
-    number: "03",
-    label: { en: "THE NEXT CHAPTER", mn: "ДАРААГИЙН АЛХАМ" },
-    title: { en: "Keep moving forward.", mn: "Үргэлжлүүлэн хөгжүүлнэ." },
-    body: {
-      en: "Share the work, listen to feedback, and take on the next meaningful challenge.",
-      mn: "Бүтээлээ хуваалцаж, санал хүсэлтийг сонсон, дараагийн хэрэгтэй сорилтыг хүлээж авна.",
-    },
-    tags: ["Feedback", "Growth"],
   },
 ];
