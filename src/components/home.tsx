@@ -49,7 +49,7 @@ export function Home({ initialDate }: { initialDate: string }) {
             <span className="hero-serif">
               {t({
                 en: "Testing with curiosity.",
-                ja: "好奇心を持って、テストする。",
+                ja: "好奇心で、テストする。",
               })}
             </span>
           </h2>

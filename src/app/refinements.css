@@ -22,6 +22,11 @@ html[lang="ja"] .dashboard-hero h2 {
   font-size: clamp(28px, 2.8vw, 42px);
   line-height: 1.45;
 }
+html[lang="ja"] .dashboard-hero .hero-serif {
+  display: inline-block;
+  max-width: 100%;
+  text-wrap: balance;
+}
 h1,
 h2,
 h3 {
