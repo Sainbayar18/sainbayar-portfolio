@@ -40,20 +40,34 @@ const timeline = [
     icon: Terminal,
   },
   {
+    date: { en: "2025 — 2026", ja: "2025年 — 2026年" },
+    title: {
+      en: "Bachelor’s degree in Computer Science",
+      ja: "コンピュータサイエンス学士",
+    },
+    company: { en: "IET", ja: "IET" },
+    description: {
+      en: "Studied Computer Science at IET from 2025 to 2026 and earned a bachelor’s degree.",
+      ja: "2025年から2026年までIETでコンピュータサイエンスを学び、学士号を取得しました。",
+    },
+    tags: ["Computer science", "Bachelor’s degree"],
+    icon: GraduationCap,
+  },
+  {
     date: { en: "2020 — 2025", ja: "2020年 — 2025年" },
     title: {
-      en: "Computer Science graduate",
-      ja: "コンピュータサイエンス専攻・卒業",
+      en: "Associate Bachelor in Computer Science",
+      ja: "コンピュータサイエンス（Associate Bachelor）",
     },
     company: {
       en: "Mongol Kosen Technology College",
       ja: "モンゴル高専",
     },
     description: {
-      en: "Studied Computer Science at Mongol Kosen Technology College from 2020 to 2025, graduating in 2025.",
-      ja: "2020年から2025年までモンゴル高専でコンピュータサイエンスを専攻し、2025年に卒業しました。",
+      en: "Studied Computer Science at Mongol Kosen Technology College from 2020 to 2025, graduating with an Associate Bachelor degree in 2025.",
+      ja: "2020年から2025年までモンゴル高専でコンピュータサイエンスを専攻し、2025年にAssociate Bachelorの学位を取得して卒業しました。",
     },
-    tags: ["Computer science", "Graduated 2025"],
+    tags: ["Computer science", "Associate Bachelor"],
     icon: GraduationCap,
   },
 ];
