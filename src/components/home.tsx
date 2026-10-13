@@ -2,7 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Braces, MapPin, ShieldCheck } from "lucide-react";
+import {
+  ArrowUpRight,
+  BookOpen,
+  Braces,
+  MapPin,
+  ShieldCheck,
+} from "lucide-react";
 import { profile, projects } from "@/lib/portfolio";
 import { usePreferences } from "./preferences";
 import { ProjectCard } from "./project-card";
@@ -58,45 +64,54 @@ export function Home({ initialDate }: { initialDate: string }) {
             </Link>
           </div>
         </div>
-        <div className="build-illustration" aria-hidden="true">
-          <div className="illustration-window">
-            <div className="illustration-top">
-              <span />
-              <span />
-              <span />
-              <i>sainbayar / workspace</i>
-            </div>
-            <div className="illustration-code">
-              <span className="code-comment">
-                {"// create. test. improve."}
-              </span>
+        <section className="hero-focus" aria-labelledby="hero-focus-heading">
+          <p className="eyebrow" id="hero-focus-heading">
+            {t({ en: "WHAT I BRING", mn: "МИНИЙ ЧИГЛЭЛ" })}
+          </p>
+          <div className="hero-focus-item">
+            <Braces size={21} aria-hidden="true" />
+            <div>
+              <h3>{t({ en: "Build", mn: "Хөгжүүлэх" })}</h3>
               <p>
-                <b>const</b> developer = {"{"}
-              </p>
-              <p className="code-indent">
-                name: <em>&quot;Sainbayar&quot;</em>,
-              </p>
-              <p className="code-indent">
-                basedIn: <em>&quot;Japan&quot;</em>,
-              </p>
-              <p className="code-indent">
-                mindset: <em>&quot;stay curious&quot;</em>
-              </p>
-              <p>{"}"};</p>
-              <div className="code-rule" />
-              <p>
-                <b>build</b>(ideas);
-              </p>
-              <p>
-                <b>test</b>(theDetails);
+                {t({
+                  en: "Useful, responsive web experiences.",
+                  mn: "Хэрэглэхэд хялбар, responsive вэб.",
+                })}
               </p>
             </div>
           </div>
-          <span className="illustration-badge">
-            <ShieldCheck size={17} /> BUILD · TEST · LEARN
-          </span>
-          <span className="illustration-orbit">✳</span>
-        </div>
+          <div className="hero-focus-item">
+            <ShieldCheck size={21} aria-hidden="true" />
+            <div>
+              <h3>{t({ en: "Test", mn: "Тестлэх" })}</h3>
+              <p>
+                {t({
+                  en: "Real products. Attention to the details.",
+                  mn: "Бодит бүтээгдэхүүн. Нарийн зүйл бүрд анхаарах.",
+                })}
+              </p>
+            </div>
+          </div>
+          <div className="hero-focus-item">
+            <BookOpen size={21} aria-hidden="true" />
+            <div>
+              <h3>{t({ en: "Keep learning", mn: "Суралцах" })}</h3>
+              <p>
+                {t({
+                  en: "Code, quality, and the possibilities of AI.",
+                  mn: "Код, чанар, хиймэл оюуны боломжууд.",
+                })}
+              </p>
+            </div>
+          </div>
+          <p className="hero-focus-location">
+            <MapPin size={14} aria-hidden="true" />
+            {t({
+              en: "Mongolian roots · Based in Japan",
+              mn: "Монгол хүн · Японд амьдардаг",
+            })}
+          </p>
+        </section>
       </section>
       <div className="dashboard-overview">
         <GitHubActivity initialDate={initialDate} />

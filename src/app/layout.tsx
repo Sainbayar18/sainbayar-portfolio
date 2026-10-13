@@ -4,6 +4,7 @@ import { Header, Footer } from "@/components/shell";
 import "./globals.css";
 import "./sidebar.css";
 import "./dashboard.css";
+import "./refinements.css";
 export const metadata: Metadata = {
   title: {
     default: "Sainbayar — Developer & Software Tester",

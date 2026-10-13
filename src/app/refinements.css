@@ -1,0 +1,571 @@
+/* Shared refinements use the existing forest / ivory theme tokens. */
+:root {
+  --ui-radius: 18px;
+  --ui-card-padding: clamp(22px, 2.2vw, 30px);
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.dashboard-heading {
+  margin-bottom: 32px;
+}
+.dashboard-heading > .eyebrow,
+.eyebrow {
+  font-size: 11px;
+}
+.dashboard-heading h1 {
+  font-size: clamp(34px, 3.2vw, 44px);
+}
+.dashboard-heading > p:last-child,
+.page-heading > p {
+  font-size: 15px;
+  max-width: 650px;
+}
+.dashboard-card,
+.platform-switcher .upwork-card,
+.contact-dashboard .contact-form {
+  padding: var(--ui-card-padding);
+  border-radius: var(--ui-radius);
+}
+.card-heading h2,
+.current-stack .card-heading h2,
+.certifications .card-heading h2 {
+  font-size: 21px;
+}
+.card-heading > a {
+  min-height: 40px;
+  min-width: 40px;
+  align-items: center;
+  justify-content: center;
+}
+.card-kicker {
+  font-size: 12px;
+}
+.card-description {
+  font-size: 14px;
+  line-height: 1.75;
+}
+.text-link,
+.dashboard-hero .text-link,
+.recent-projects .card-heading .text-link {
+  font-size: 14px;
+  min-height: 44px;
+}
+.button,
+.dashboard-hero .button {
+  min-height: 46px;
+  padding: 12px 20px;
+  border-radius: 9px;
+  font-size: 14px;
+}
+.button:hover {
+  transform: none;
+}
+.button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+.dashboard-hero {
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  padding: clamp(28px, 3vw, 44px);
+  gap: clamp(26px, 3vw, 46px);
+  border-radius: var(--ui-radius);
+}
+.hero-hello {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.dashboard-hero h2 {
+  font-size: clamp(32px, 3.2vw, 48px);
+  line-height: 1.22;
+}
+.dashboard-hero-copy > p:not(.hero-hello) {
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 520px;
+  margin-top: 22px;
+}
+.dashboard-hero .hero-buttons {
+  margin-top: 28px;
+  gap: 22px;
+}
+.hero-focus {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 26px;
+  min-width: 0;
+}
+.hero-focus > .eyebrow {
+  color: var(--faint);
+  margin-bottom: 22px;
+}
+.hero-focus-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding-block: 17px;
+  border-bottom: 1px solid var(--line);
+}
+.hero-focus-item:first-of-type {
+  padding-top: 0;
+}
+.hero-focus-item > svg {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.hero-focus-item h3 {
+  font-size: 16px;
+}
+.hero-focus-item p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-top: 4px;
+}
+.hero-focus-location {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--faint);
+  font-size: 12px;
+  padding-top: 20px;
+}
+.hero-focus-location svg {
+  flex-shrink: 0;
+}
+.dashboard-overview {
+  margin-top: 28px;
+  gap: 24px;
+}
+.activity-toolbar > p,
+.activity-years button {
+  font-size: 12px;
+}
+.activity-years button {
+  min-height: 36px;
+  padding: 6px 10px;
+  border-radius: 7px;
+  font-variant-numeric: tabular-nums;
+}
+.calendar-months {
+  font-size: 11px;
+}
+.activity-legend,
+.activity-stats > div > span:last-child,
+.activity-stats small {
+  font-size: 12px;
+}
+.activity-legend > span {
+  font-size: 11px;
+  gap: 4px;
+}
+.activity-stats strong,
+.upwork-stats dd {
+  font-variant-numeric: tabular-nums;
+}
+.activity-source {
+  font-size: 11px;
+  line-height: 1.6;
+}
+.dashboard-person h3 {
+  font-size: 18px;
+}
+.dashboard-person p {
+  font-size: 12px;
+}
+.about-facts {
+  font-size: 13px;
+}
+.about-profile-links {
+  gap: 6px 16px;
+}
+.about-profile-links > a {
+  font-size: 12px;
+  min-height: 36px;
+}
+.recent-projects {
+  margin-top: 44px;
+}
+.project-grid {
+  gap: 24px;
+  align-items: stretch;
+}
+.project-card,
+.recent-projects .project-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--ui-radius);
+  overflow: hidden;
+}
+.project-card:hover {
+  border-color: var(--accent);
+}
+.project-card .project-image {
+  height: auto;
+  aspect-ratio: 16 / 10;
+  border-radius: 0;
+  border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.project-card .project-art,
+.project-card:hover .project-art {
+  transition: none;
+  transform: none;
+}
+.project-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 24px;
+}
+.project-meta {
+  margin: 0 0 12px;
+  font-size: 12px;
+  gap: 12px;
+}
+.project-number {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.project-card h3 {
+  font-size: 23px;
+  gap: 12px;
+}
+.project-card h3 svg {
+  flex-shrink: 0;
+}
+.project-card-content > p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+  margin-top: 12px;
+}
+.project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding-block: 20px;
+}
+.project-card-tags > span {
+  font-size: 11px;
+  padding: 4px 9px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--muted);
+}
+.project-card-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--accent);
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.sample-label {
+  font-size: 10px;
+}
+.dashboard-contact {
+  margin-top: 32px;
+  padding: var(--ui-card-padding);
+  border-radius: var(--ui-radius);
+}
+.dashboard-contact .eyebrow {
+  font-size: 11px;
+}
+.dashboard-contact p:last-child {
+  font-size: 14px;
+}
+.timeline-date,
+.career-timeline .tag-list > span {
+  font-size: 11px;
+  padding: 4px 9px;
+}
+.timeline-company {
+  font-size: 13px;
+}
+.timeline-description {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.career-timeline article {
+  padding-bottom: 34px;
+}
+.skills-dashboard {
+  gap: 28px;
+}
+.skills-dashboard h3 {
+  font-size: 16px;
+}
+.skills-dashboard ul {
+  font-size: 14px;
+}
+.skills-dashboard article > svg {
+  margin-bottom: 12px;
+}
+.platform-buttons button {
+  min-height: 44px;
+  font-size: 14px;
+}
+.platform-switcher .upwork-title,
+.platform-switcher .upwork-cta {
+  font-size: 14px;
+}
+.upwork-location,
+.upwork-updated,
+.upwork-stats dt,
+.upwork-card-top .eyebrow {
+  font-size: 12px;
+}
+.platform-switcher .upwork-card {
+  background: var(--panel-soft);
+}
+.upwork-skills > span {
+  font-size: 11px;
+}
+.stack-chips > span {
+  font-size: 12px;
+  padding: 8px 11px;
+}
+.certificate h3 {
+  font-size: 14px;
+}
+.certificate p {
+  font-size: 12px;
+}
+.sidebar-role {
+  font-size: 13px;
+}
+.sidebar-location,
+.sidebar-signoff {
+  font-size: 12px;
+}
+.sidebar-label,
+.sidebar-nav-index {
+  font-size: 11px;
+}
+.sidebar-nav > a {
+  font-size: 14px;
+  min-height: 46px;
+  border-radius: 9px;
+}
+.sidebar-preferences .language-button {
+  min-height: 44px;
+  font-size: 13px;
+}
+.theme-button {
+  min-height: 44px;
+  min-width: 44px;
+}
+.social-icons > a,
+.social-placeholder {
+  flex: 1;
+  max-width: 44px;
+  min-width: 0;
+  height: 40px;
+  border-radius: 8px;
+}
+.sidebar-inner {
+  padding-bottom: max(24px, env(safe-area-inset-bottom));
+}
+.contact-form label {
+  font-size: 14px;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  font-size: 16px;
+  padding: 13px 14px;
+}
+.contact-dashboard .contact-form > p.card-description {
+  margin-bottom: 0;
+}
+.form-status {
+  font-size: 13px;
+  line-height: 1.7;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.form-status svg {
+  flex-shrink: 0;
+}
+.form-status[data-state="error"] {
+  color: var(--text);
+}
+.form-status[data-state="error"] svg {
+  color: inherit;
+}
+.contact-form .form-next-step {
+  align-self: flex-start;
+  margin-top: -14px;
+}
+.contact-method h2 {
+  font-size: 18px;
+}
+.contact-method p,
+.contact-method .text-link {
+  font-size: 14px;
+}
+.contact-method .card-description {
+  font-size: 12px;
+}
+.filter-button,
+.search-field input {
+  font-size: 14px;
+  min-height: 44px;
+}
+.about-story > p:not(.eyebrow),
+.values-grid article p,
+.detail-content > div > p:not(.eyebrow),
+.detail-content li,
+.detail-sidebar > p:not(.eyebrow) {
+  font-size: 15px;
+}
+.site-footer {
+  padding-top: 40px;
+  padding-bottom: max(24px, env(safe-area-inset-bottom));
+}
+.footer-top {
+  padding-bottom: 28px;
+  gap: 24px;
+}
+.footer-top .eyebrow {
+  font-size: 11px;
+}
+.footer-cta {
+  font-size: clamp(22px, 2vw, 30px);
+  min-height: 44px;
+}
+.footer-socials a {
+  font-size: 13px;
+  min-height: 44px;
+}
+.footer-bottom {
+  gap: 16px;
+  font-size: 12px;
+}
+.footer-bottom a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+@media (max-width: 1180px) {
+  .experience-dashboard,
+  .contact-dashboard .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .experience-rail {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+  .experience-rail .platform-switcher {
+    grid-row: span 2;
+  }
+  .skills-dashboard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .contact-rail {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1000px) {
+  .dashboard-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero-focus {
+    padding: 24px;
+  }
+}
+@media (max-width: 860px) {
+  .mobile-topbar {
+    height: auto;
+    min-height: 72px;
+    padding-top: env(safe-area-inset-top);
+    padding-left: max(24px, env(safe-area-inset-left));
+    padding-right: max(24px, env(safe-area-inset-right));
+  }
+  .sidebar-menu-toggle,
+  .sidebar-close {
+    min-height: 44px;
+    min-width: 44px;
+    font-size: 13px;
+  }
+  .sidebar-inner {
+    padding-top: max(24px, env(safe-area-inset-top));
+  }
+}
+@media (max-width: 640px) {
+  .site-frame .main-container,
+  .site-frame .site-footer {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+  }
+  .dashboard-page {
+    padding-top: 28px;
+  }
+  .dashboard-hero {
+    padding: 24px;
+    gap: 28px;
+  }
+  .dashboard-hero h2 {
+    font-size: 34px;
+  }
+  .hero-focus {
+    padding: 22px;
+  }
+  .hero-focus-location {
+    font-size: 11px;
+  }
+  .dashboard-overview,
+  .project-grid,
+  .experience-rail,
+  .skills-dashboard,
+  .contact-rail {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .experience-rail .platform-switcher {
+    grid-row: auto;
+  }
+  .project-card-content {
+    padding: 22px;
+  }
+  .recent-projects .card-heading {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .activity-stats {
+    gap: 12px;
+  }
+  .activity-stats > div {
+    gap: 8px;
+  }
+  .activity-stats strong {
+    font-size: 23px;
+  }
+  .footer-monogram {
+    display: none;
+  }
+}

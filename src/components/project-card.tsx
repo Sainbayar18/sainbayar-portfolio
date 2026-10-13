@@ -14,24 +14,43 @@ export function ProjectCard({
     <Link href={`/projects/${project.slug}`} className="project-card">
       <div className="project-image">
         <ProjectArt kind={project.art} />
-        <span className="project-open">
-          <ArrowUpRight size={22} />
-        </span>
         {project.sample ? (
           <span className="sample-label">
             {t({ en: "SAMPLE CONCEPT", mn: "ЖИШЭЭ КОНЦЕПТ" })}
           </span>
         ) : null}
       </div>
-      <div className="project-meta">
-        <span className="project-number">/{project.number}</span>
-        <span>{project.tags.join(" / ")}</span>
+      <div className="project-card-content">
+        <div className="project-meta">
+          <span className="project-number">/{project.number}</span>
+          <span>
+            {t({
+              en:
+                project.category === "Web"
+                  ? "Web development"
+                  : "Interface design",
+              mn:
+                project.category === "Web"
+                  ? "Вэб хөгжүүлэлт"
+                  : "Интерфэйс дизайн",
+            })}
+          </span>
+        </div>
+        <h3>
+          {project.name}
+          <ArrowUpRight size={22} aria-hidden="true" />
+        </h3>
+        <p>{t(project.description)}</p>
+        <div className="project-card-tags">
+          {project.tags.map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
+        </div>
+        <span className="project-card-action">
+          {t({ en: "Explore project", mn: "Төсөлтэй танилцах" })}
+          <ArrowUpRight size={16} aria-hidden="true" />
+        </span>
       </div>
-      <h3>
-        {project.name}
-        <ArrowUpRight size={23} />
-      </h3>
-      <p>{t(project.description)}</p>
     </Link>
   );
 }

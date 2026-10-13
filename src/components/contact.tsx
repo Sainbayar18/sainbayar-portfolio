@@ -3,6 +3,8 @@
 import { useState, type FormEvent } from "react";
 import {
   ArrowUpRight,
+  CircleAlert,
+  Check,
   Copy,
   Mail,
   MapPin,
@@ -17,8 +19,13 @@ import { SocialLinks } from "./social-links";
 export function Contact() {
   const { t } = usePreferences();
   const [status, setStatus] = useState("");
+  const [copyState, setCopyState] = useState<
+    "idle" | "pending" | "success" | "error"
+  >("idle");
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (copyState === "pending") return;
+    setStatus("");
     const form = new FormData(event.currentTarget);
     const subject = String(form.get("subject"));
     const message = `Name: ${form.get("name")}\nEmail: ${form.get("email")}\nSubject: ${subject}\n\n${form.get("message")}`;
@@ -31,8 +38,10 @@ export function Contact() {
         }),
       );
     } else {
+      setCopyState("pending");
       try {
         await navigator.clipboard.writeText(message);
+        setCopyState("success");
         setStatus(
           t({
             en: "Message copied. Open Upwork and paste it into a message to me.",
@@ -40,6 +49,7 @@ export function Contact() {
           }),
         );
       } catch {
+        setCopyState("error");
         setStatus(
           t({
             en: "Could not copy automatically. Select your text and copy it manually.",
@@ -132,8 +142,14 @@ export function Contact() {
               })}
             />
           </label>
-          <button type="submit" className="button button-primary">
-            {profile.email ? (
+          <button
+            type="submit"
+            className="button button-primary"
+            disabled={copyState === "pending"}
+          >
+            {copyState === "pending" ? (
+              t({ en: "Copying…", mn: "Хуулж байна…" })
+            ) : profile.email ? (
               <>
                 <Send size={17} />
                 {t({ en: "Prepare email", mn: "Имэйл бэлдэх" })}
@@ -145,13 +161,32 @@ export function Contact() {
               </>
             )}
           </button>
-          <p className="form-status" role="status">
+          <p className="form-status" role="status" data-state={copyState}>
+            {copyState === "success" ? (
+              <Check size={18} aria-hidden="true" />
+            ) : copyState === "error" ? (
+              <CircleAlert size={18} aria-hidden="true" />
+            ) : null}
             {status ||
               t({
                 en: "Your message is sent only when you send it from your email app or Upwork.",
                 mn: "Зурвас нь имэйл апп эсвэл Upwork дээрээс илгээх үед л илгээгдэнэ.",
               })}
           </p>
+          {copyState === "success" ? (
+            <a
+              className="text-link form-next-step"
+              href={profile.upwork.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t({
+                en: "Open Upwork to send your message",
+                mn: "Upwork нээж зурвасаа илгээх",
+              })}
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          ) : null}
         </form>
         <aside className="contact-rail">
           {profile.email ? (
