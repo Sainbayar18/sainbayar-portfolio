@@ -20,7 +20,7 @@ const timeline = [
       en: "Freelance software testing",
       ja: "フリーランスのソフトウェアテスト",
     },
-    company: "Upwork · uTest",
+    company: { en: "Upwork · uTest", ja: "Upwork · uTest" },
     description: {
       en: "Hands-on testing across web apps, iOS apps, a Japanese-learning Chrome extension, and a Steam puzzle game. Clear bug reports, usability feedback, and test evidence.",
       ja: "Webアプリ、iOSアプリ、日本語学習用のChrome拡張機能、Steamのパズルゲームなどをテスト。再現手順を含む不具合報告、使いやすさへのフィードバック、テスト結果の記録を行っています。",
@@ -31,7 +31,7 @@ const timeline = [
   {
     date: { en: "OCT 2025 — PRESENT", ja: "2025年10月 — 現在" },
     title: { en: "Software Engineer", ja: "ソフトウェアエンジニア" },
-    company: "Co-Graph",
+    company: { en: "Co-Graph", ja: "Co-Graph" },
     description: {
       en: "Growing my software development experience in Japan, with a focus on learning, collaboration, and practical development.",
       ja: "日本でソフトウェア開発の経験を積みながら、学び、チームでの協働、実践的な開発に取り組んでいます。",
@@ -40,17 +40,20 @@ const timeline = [
     icon: Terminal,
   },
   {
-    date: { en: "2025 — 2026", ja: "2025年 — 2026年" },
+    date: { en: "2020 — 2025", ja: "2020年 — 2025年" },
     title: {
-      en: "Computer science studies",
-      ja: "コンピュータサイエンスの学習",
+      en: "Computer Science graduate",
+      ja: "コンピュータサイエンス専攻・卒業",
     },
-    company: "IET",
+    company: {
+      en: "Mongol Kosen Technology College",
+      ja: "モンゴル高専",
+    },
     description: {
-      en: "Computer science studies alongside practical projects and continued learning in web development, programming, and AI.",
-      ja: "コンピュータサイエンスを学びながら、実践的なプロジェクトに取り組み、Web開発、プログラミング、AIの学習を続けています。",
+      en: "Studied Computer Science at Mongol Kosen Technology College from 2020 to 2025, graduating in 2025.",
+      ja: "2020年から2025年までモンゴル高専でコンピュータサイエンスを専攻し、2025年に卒業しました。",
     },
-    tags: ["Computer science", "Learning"],
+    tags: ["Computer science", "Graduated 2025"],
     icon: GraduationCap,
   },
 ];
@@ -122,6 +125,13 @@ const skills = [
 ];
 const certifications = [
   {
+    title: "Legacy Responsive Web Design V8",
+    issuer: "freeCodeCamp",
+    year: "2026",
+    url: "https://www.freecodecamp.org/certification/fccd5bb7ae0-2ee3-4db7-a7a8-6ed8222112b4/responsive-web-design",
+    code: "RWD",
+  },
+  {
     title: "Succeed in the Age of AI",
     issuer: "Dr. Angela Yu · Udemy",
     year: "2026",
@@ -165,13 +175,13 @@ export function Experience() {
             </div>
             <div className="career-timeline">
               {timeline.map((item) => (
-                <article key={item.company}>
+                <article key={item.company.en}>
                   <span className="timeline-node">
                     <item.icon size={16} aria-hidden="true" />
                   </span>
                   <span className="timeline-date">{t(item.date)}</span>
                   <h3>{t(item.title)}</h3>
-                  <p className="timeline-company">{item.company}</p>
+                  <p className="timeline-company">{t(item.company)}</p>
                   <p className="timeline-description">{t(item.description)}</p>
                   <div className="tag-list">
                     {item.tags.map((tag) => (
