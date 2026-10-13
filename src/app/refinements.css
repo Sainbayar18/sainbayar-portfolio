@@ -3,6 +3,25 @@
   --ui-radius: 18px;
   --ui-card-padding: clamp(22px, 2.2vw, 30px);
 }
+html[lang="ja"] body {
+  font-family: "DM Sans", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+}
+html[lang="ja"] h1,
+html[lang="ja"] h2,
+html[lang="ja"] h3,
+html[lang="ja"] .footer-cta {
+  font-family: Manrope, "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  letter-spacing: normal;
+  line-height: 1.5;
+}
+html[lang="ja"] .hero-serif {
+  font-family: inherit;
+  font-style: normal;
+}
+html[lang="ja"] .dashboard-hero h2 {
+  font-size: clamp(28px, 2.8vw, 42px);
+  line-height: 1.45;
+}
 h1,
 h2,
 h3 {

@@ -55,17 +55,20 @@ export function Projects() {
     <div className="page-content">
       <PageHeading
         index="01"
-        label={{ en: "THE THINGS I MAKE", mn: "МИНИЙ БҮТЭЭЛҮҮД" }}
-        title={{ en: "Ideas, brought to life", mn: "Санаанаас бүтээл рүү" }}
+        label={{ en: "THE THINGS I MAKE", ja: "制作実績" }}
+        title={{ en: "Ideas, brought to life", ja: "アイデアを、かたちに" }}
         description={{
           en: "A collection of builds and explorations. Each one, a chance to learn something new.",
-          mn: "Бүтээлүүд болон шинэ санаанууд. Төсөл бүрээс шинэ зүйл суралцана.",
+          ja: "制作したものや、新しい表現への挑戦をご紹介します。どのプロジェクトも、新しい学びにつながっています。",
         }}
       />
       <div className="project-toolbar">
         <div
           className="filter-group"
-          aria-label={t({ en: "Filter projects", mn: "Төсөл шүүх" })}
+          aria-label={t({
+            en: "Filter projects",
+            ja: "プロジェクトを絞り込む",
+          })}
         >
           {["All", "Web", "UI"].map((f) => (
             <button
@@ -77,10 +80,10 @@ export function Projects() {
               onClick={() => setFilter(f)}
             >
               {f === "All"
-                ? t({ en: "All work", mn: "Бүх бүтээл" })
+                ? t({ en: "All work", ja: "すべて" })
                 : f === "Web"
-                  ? t({ en: "Development", mn: "Хөгжүүлэлт" })
-                  : t({ en: "Design concepts", mn: "Дизайн концепт" })}
+                  ? t({ en: "Development", ja: "開発" })
+                  : t({ en: "Design concepts", ja: "デザイン案" })}
               <span>
                 {projects
                   .filter((p) => f === "All" || p.category === f)
@@ -93,8 +96,11 @@ export function Projects() {
         <label className="search-field">
           <Search size={17} />
           <input
-            aria-label={t({ en: "Search projects", mn: "Төсөл хайх" })}
-            placeholder={t({ en: "Find a project…", mn: "Төсөл хайх…" })}
+            aria-label={t({ en: "Search projects", ja: "プロジェクトを検索" })}
+            placeholder={t({
+              en: "Find a project…",
+              ja: "プロジェクトを検索…",
+            })}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
@@ -107,11 +113,16 @@ export function Projects() {
         {filtered.length === 0 ? (
           <div className="empty-state">
             <Search size={28} />
-            <h2>{t({ en: "No projects found", mn: "Төсөл олдсонгүй" })}</h2>
+            <h2>
+              {t({
+                en: "No projects found",
+                ja: "プロジェクトが見つかりません",
+              })}
+            </h2>
             <p>
               {t({
                 en: "Try another search or reset the filters.",
-                mn: "Өөр үгээр хайх эсвэл шүүлтүүрээ арилгаарай.",
+                ja: "別のキーワードを試すか、絞り込みをリセットしてください。",
               })}
             </p>
             <button
@@ -121,7 +132,7 @@ export function Projects() {
                 setQuery("");
               }}
             >
-              {t({ en: "Reset filters", mn: "Шүүлтүүр арилгах" })}
+              {t({ en: "Reset filters", ja: "絞り込みをリセット" })}
             </button>
           </div>
         ) : null}
@@ -137,9 +148,9 @@ export function About() {
         index="03"
         label={{
           en: "THE PERSON BEHIND THE PIXELS",
-          mn: "БҮТЭЭЛИЙН ЦААНАХ ХҮН",
+          ja: "つくり手について",
         }}
-        title={{ en: "Hey, I’m Sainbayar", mn: "Сайн уу, би Sainbayar" }}
+        title={{ en: "Hey, I’m Sainbayar", ja: "こんにちは、Sainbayarです" }}
         description={profile.role}
       />
       <div className="about-layout">
@@ -148,65 +159,73 @@ export function About() {
             S<span>✳</span>
           </span>
           <div className="portrait-caption">
-            <span>SAINBAYAR / PERSONAL PORTFOLIO</span>
+            <span>
+              {t({
+                en: "SAINBAYAR / PERSONAL PORTFOLIO",
+                ja: "SAINBAYAR / ポートフォリオ",
+              })}
+            </span>
             <ArrowUpRight size={22} />
           </div>
         </div>
         <div className="about-story">
           <p className="eyebrow">
-            {t({ en: "A LITTLE ABOUT ME", mn: "МИНИЙ ТУХАЙ" })}
+            {t({ en: "A LITTLE ABOUT ME", ja: "自己紹介" })}
           </p>
           <h2>
-            {t({ en: "Good ideas deserve", mn: "Сайн санааг" })}
+            {t({ en: "Good ideas deserve", ja: "良いアイデアを、" })}
             <br />
             <span className="hero-serif">
-              {t({ en: "a thoughtful build.", mn: "нямбай бүтээнэ." })}
+              {t({ en: "a thoughtful build.", ja: "丁寧にかたちに。" })}
             </span>
           </h2>
           <p>{t(profile.bio)}</p>
           <p>
             {t({
               en: "I’m drawn to the space where creativity meets technology. I believe the most useful experiences feel simple on the surface because someone cared about what happens underneath.",
-              mn: "Бүтээлч сэтгэлгээ технологитой уулзах тэр орон зай надад сонирхолтой. Цаана нь нямбай ажилласан учраас л хэрэгтэй бүтээл хэрэглэгчид энгийн санагддаг гэж боддог.",
+              ja: "創造性と技術が交わるところに惹かれます。使いやすい体験がシンプルに感じられるのは、その裏側を誰かが丁寧につくり込んでいるからだと考えています。",
             })}
           </p>
           <div className="about-signature">
             Sainbayar<span className="accent">.</span>
           </div>
           <Link href="/contact" className="button button-primary">
-            {t({ en: "Let’s connect", mn: "Холбогдоцгооё" })}
+            {t({ en: "Let’s connect", ja: "お問い合わせ" })}
             <ArrowUpRight size={18} />
           </Link>
         </div>
       </div>
       <section className="section about-values">
         <p className="eyebrow">
-          {t({ en: "THE WAY I SEE IT", mn: "МИНИЙ ӨНЦӨГ" })}
+          {t({ en: "THE WAY I SEE IT", ja: "大切にしていること" })}
         </p>
         <div className="values-grid">
           {[
             {
               icon: Braces,
-              title: { en: "Make it work.", mn: "Ажилладаг байх." },
+              title: { en: "Make it work.", ja: "きちんと動くものを。" },
               body: {
                 en: "Start with the problem. Choose the right tools. Build something that actually helps.",
-                mn: "Асуудлаас эхэлнэ. Зөв хэрэгслээ сонгоно. Бодитоор хэрэг болох зүйл бүтээнэ.",
+                ja: "課題から考え、適切なツールを選び、本当に役立つものをつくります。",
               },
             },
             {
               icon: Layers3,
-              title: { en: "Make it feel right.", mn: "Хэрэглэхэд таатай." },
+              title: {
+                en: "Make it feel right.",
+                ja: "心地よく使えるものを。",
+              },
               body: {
                 en: "Thoughtful spacing, clear words, and small details that make the difference.",
-                mn: "Зөв зай, тодорхой үг, ялгааг бий болгох жижиг шийдлүүд.",
+                ja: "余白、わかりやすい言葉、細かな工夫。一つひとつを大切にします。",
               },
             },
             {
               icon: Sparkles,
-              title: { en: "Keep getting better.", mn: "Тасралтгүй сайжрах." },
+              title: { en: "Keep getting better.", ja: "少しずつ、より良く。" },
               body: {
                 en: "There’s always something new to learn. That’s the part I love most.",
-                mn: "Үргэлж шинэ зүйл сурах боломж бий. Энэ нь надад хамгийн их таалагддаг.",
+                ja: "いつも新しく学べることがあります。それが、この仕事の一番好きなところです。",
               },
             },
           ].map((v) => (
@@ -230,15 +249,15 @@ export function ProjectDetail({ slug }: { slug: string }) {
     <div className="page-content project-detail">
       <Link href="/projects" className="text-link">
         <ArrowLeft size={17} />
-        {t({ en: "Back to projects", mn: "Төслүүд рүү буцах" })}
+        {t({ en: "Back to projects", ja: "プロジェクト一覧に戻る" })}
       </Link>
       <PageHeading
         index={project.number}
         label={{
           en: project.sample ? "SAMPLE DESIGN CONCEPT" : "DESIGN & DEVELOPMENT",
-          mn: project.sample ? "ЖИШЭЭ ДИЗАЙН КОНЦЕПТ" : "ДИЗАЙН БА ХӨГЖҮҮЛЭЛТ",
+          ja: project.sample ? "デザインコンセプト例" : "デザイン・開発",
         }}
-        title={{ en: project.name, mn: project.name }}
+        title={{ en: project.name, ja: project.name }}
         description={project.description}
       />
       <div className="detail-art">
@@ -246,15 +265,13 @@ export function ProjectDetail({ slug }: { slug: string }) {
       </div>
       <div className="detail-content">
         <div>
-          <p className="eyebrow">
-            {t({ en: "THE OVERVIEW", mn: "ТОВЧ ТАНИЛЦУУЛГА" })}
-          </p>
+          <p className="eyebrow">{t({ en: "THE OVERVIEW", ja: "概要" })}</p>
           <h2>
-            {t({ en: "A closer look", mn: "Дэлгэрэнгүй" })}
+            {t({ en: "A closer look", ja: "プロジェクトの詳細" })}
             <span className="accent">.</span>
           </h2>
           <p>{t(project.overview)}</p>
-          <h3>{t({ en: "What’s inside", mn: "Онцлог" })}</h3>
+          <h3>{t({ en: "What’s inside", ja: "主な特徴" })}</h3>
           <ul>
             {project.features[locale].map((feature) => (
               <li key={feature}>
@@ -266,7 +283,7 @@ export function ProjectDetail({ slug }: { slug: string }) {
         </div>
         <aside className="detail-sidebar">
           <p className="eyebrow">
-            {t({ en: "BUILT WITH", mn: "АШИГЛАСАН ХЭРЭГСЭЛ" })}
+            {t({ en: "BUILT WITH", ja: "使用技術・特徴" })}
           </p>
           <div className="tag-list">
             {project.tags.map((tag) => (
@@ -274,16 +291,16 @@ export function ProjectDetail({ slug }: { slug: string }) {
             ))}
           </div>
           <p className="eyebrow">
-            {t({ en: "PROJECT TYPE", mn: "ТӨСЛИЙН ТӨРӨЛ" })}
+            {t({ en: "PROJECT TYPE", ja: "プロジェクトの種類" })}
           </p>
           <p>
             {project.sample
-              ? t({ en: "Sample concept", mn: "Жишээ концепт" })
-              : t({ en: "Personal project", mn: "Хувийн төсөл" })}
+              ? t({ en: "Sample concept", ja: "コンセプト例" })
+              : t({ en: "Personal project", ja: "個人プロジェクト" })}
           </p>
           {project.liveUrl ? (
             <Link href={project.liveUrl} className="button button-primary">
-              {t({ en: "View project", mn: "Төслийг үзэх" })}
+              {t({ en: "View project", ja: "サイトを見る" })}
               <ArrowUpRight size={17} />
             </Link>
           ) : null}
@@ -294,7 +311,7 @@ export function ProjectDetail({ slug }: { slug: string }) {
               target="_blank"
               rel="noreferrer"
             >
-              {t({ en: "Source code", mn: "Эх код" })}
+              {t({ en: "Source code", ja: "ソースコード" })}
               <ArrowUpRight size={17} />
             </a>
           ) : null}
@@ -302,7 +319,7 @@ export function ProjectDetail({ slug }: { slug: string }) {
       </div>
       <Link href={`/projects/${nextProject.slug}`} className="next-project">
         <span className="eyebrow">
-          {t({ en: "NEXT PROJECT", mn: "ДАРААГИЙН ТӨСӨЛ" })}
+          {t({ en: "NEXT PROJECT", ja: "次のプロジェクト" })}
         </span>
         <span>{nextProject.name}</span>
         <ArrowUpRight size={35} />
@@ -314,16 +331,20 @@ export function NotFoundView() {
   const { t } = usePreferences();
   return (
     <div className="not-found page-content">
-      <p className="eyebrow">404 / A SMALL DETOUR</p>
-      <h1>{t({ en: "A little off the map.", mn: "Хуудас олдсонгүй." })}</h1>
+      <p className="eyebrow">
+        {t({ en: "404 / A SMALL DETOUR", ja: "404 / ページが見つかりません" })}
+      </p>
+      <h1>
+        {t({ en: "A little off the map.", ja: "ページが見つかりません。" })}
+      </h1>
       <p>
         {t({
           en: "This page doesn’t exist. Let’s find our way back.",
-          mn: "Энэ хуудас байхгүй байна. Нүүр хуудас руу буцъя.",
+          ja: "このページは存在しません。ホームに戻りましょう。",
         })}
       </p>
       <Link className="button button-primary" href="/">
-        {t({ en: "Back home", mn: "Нүүр хуудас" })}
+        {t({ en: "Back home", ja: "ホームに戻る" })}
         <ArrowUpRight size={18} />
       </Link>
       <OrbitArt />

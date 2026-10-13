@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Preferences } from "@/components/preferences";
+import { Preferences, SkipLink } from "@/components/preferences";
 import { Header, Footer } from "@/components/shell";
 import "./globals.css";
 import "./sidebar.css";
@@ -32,9 +32,7 @@ export default function RootLayout({
       <body>
         <div id="top" aria-hidden="true" />
         <Preferences>
-          <a href="#main-content" className="skip-link">
-            Skip to content
-          </a>
+          <SkipLink />
           <Header />
           <div id="site-frame" className="site-frame">
             <main id="main-content" className="main-container" tabIndex={-1}>

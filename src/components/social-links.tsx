@@ -40,7 +40,7 @@ export function SocialLinks() {
   return (
     <div
       className="social-icons"
-      aria-label={t({ en: "Social profiles", mn: "Сошиал профайлууд" })}
+      aria-label={t({ en: "Social profiles", ja: "SNS・各種プロフィール" })}
     >
       {items.map((item) =>
         item.href ? (
@@ -59,8 +59,8 @@ export function SocialLinks() {
             key={item.name}
             className="social-placeholder"
             role="img"
-            aria-label={`${item.name} — ${t({ en: "link coming soon", mn: "линк удахгүй нэмэгдэнэ" })}`}
-            title={`${item.name} — ${t({ en: "link coming soon", mn: "линк удахгүй нэмэгдэнэ" })}`}
+            aria-label={`${item.name} — ${t({ en: "link coming soon", ja: "リンクは近日追加予定" })}`}
+            title={`${item.name} — ${t({ en: "link coming soon", ja: "リンクは近日追加予定" })}`}
           >
             <span aria-hidden="true">{item.icon}</span>
           </span>

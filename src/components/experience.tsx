@@ -15,34 +15,40 @@ import { PlatformSwitcher } from "./platform-switcher";
 
 const timeline = [
   {
-    date: { en: "APR 2026 — PRESENT", mn: "2026.04 — ОДОО" },
-    title: { en: "Freelance software testing", mn: "Фриланс программын тест" },
+    date: { en: "APR 2026 — PRESENT", ja: "2026年4月 — 現在" },
+    title: {
+      en: "Freelance software testing",
+      ja: "フリーランスのソフトウェアテスト",
+    },
     company: "Upwork · uTest",
     description: {
       en: "Hands-on testing across web apps, iOS apps, a Japanese-learning Chrome extension, and a Steam puzzle game. Clear bug reports, usability feedback, and test evidence.",
-      mn: "Вэб, iOS апп, япон хэл сурах Chrome өргөтгөл болон Steam тоглоомын тест. Алдааны тайлан, хэрэглээний санал, тестийн нотолгоо бэлтгэсэн.",
+      ja: "Webアプリ、iOSアプリ、日本語学習用のChrome拡張機能、Steamのパズルゲームなどをテスト。再現手順を含む不具合報告、使いやすさへのフィードバック、テスト結果の記録を行っています。",
     },
     tags: ["Manual QA", "Usability", "Web & mobile"],
     icon: Bug,
   },
   {
-    date: { en: "OCT 2025 — PRESENT", mn: "2025.10 — ОДОО" },
-    title: { en: "Software Engineer", mn: "Программ хангамжийн инженер" },
+    date: { en: "OCT 2025 — PRESENT", ja: "2025年10月 — 現在" },
+    title: { en: "Software Engineer", ja: "ソフトウェアエンジニア" },
     company: "Co-Graph",
     description: {
       en: "Growing my software development experience in Japan, with a focus on learning, collaboration, and practical development.",
-      mn: "Японд программ хөгжүүлэлтийн туршлагаа нэмэгдүүлж, суралцах, хамтран ажиллах, бодит хөгжүүлэлтэд төвлөрч байна.",
+      ja: "日本でソフトウェア開発の経験を積みながら、学び、チームでの協働、実践的な開発に取り組んでいます。",
     },
     tags: ["Software development", "Japan"],
     icon: Terminal,
   },
   {
-    date: { en: "2025 — 2026", mn: "2025 — 2026" },
-    title: { en: "Computer science studies", mn: "Компьютерын ухааны сургалт" },
+    date: { en: "2025 — 2026", ja: "2025年 — 2026年" },
+    title: {
+      en: "Computer science studies",
+      ja: "コンピュータサイエンスの学習",
+    },
     company: "IET",
     description: {
       en: "Computer science studies alongside practical projects and continued learning in web development, programming, and AI.",
-      mn: "Компьютерын ухааны сургалттай зэрэгцэн бодит төсөл хийж, вэб хөгжүүлэлт, программчлал, хиймэл оюуны чиглэлээр суралцаж байна.",
+      ja: "コンピュータサイエンスを学びながら、実践的なプロジェクトに取り組み、Web開発、プログラミング、AIの学習を続けています。",
     },
     tags: ["Computer science", "Learning"],
     icon: GraduationCap,
@@ -50,7 +56,7 @@ const timeline = [
 ];
 const skills = [
   {
-    title: { en: "Frontend", mn: "Вэб интерфэйс" },
+    title: { en: "Frontend", ja: "フロントエンド" },
     icon: Braces,
     items: {
       en: [
@@ -58,15 +64,15 @@ const skills = [
         "Responsive HTML and CSS",
         "JavaScript & TypeScript",
       ],
-      mn: [
-        "React, Next.js интерфэйс",
-        "Responsive HTML, CSS",
-        "JavaScript, TypeScript",
+      ja: [
+        "React・Next.jsによるUI開発",
+        "HTML・CSSによるレスポンシブ対応",
+        "JavaScript・TypeScript",
       ],
     },
   },
   {
-    title: { en: "Quality assurance", mn: "Чанарын шалгалт" },
+    title: { en: "Quality assurance", ja: "品質保証・QA" },
     icon: Bug,
     items: {
       en: [
@@ -74,15 +80,15 @@ const skills = [
         "Usability feedback and UAT",
         "Bug reports with reproduction steps",
       ],
-      mn: [
-        "Вэб, гар утасны manual тест",
-        "Хэрэглээний санал болон UAT",
-        "Дахин давтах алхамтай алдааны тайлан",
+      ja: [
+        "Web・モバイルの手動テスト",
+        "ユーザビリティ評価・ユーザー受け入れテスト",
+        "再現手順を含む不具合報告",
       ],
     },
   },
   {
-    title: { en: "Programming", mn: "Программчлал" },
+    title: { en: "Programming", ja: "プログラミング" },
     icon: Terminal,
     items: {
       en: [
@@ -90,15 +96,15 @@ const skills = [
         "Problem solving through projects",
         "Exploring AI and data science",
       ],
-      mn: [
-        "Java, Python суурь мэдлэг",
-        "Төсөл дээр асуудал шийдвэрлэх",
-        "AI, өгөгдлийн шинжлэх ухаан судлах",
+      ja: [
+        "Java・Pythonの基礎",
+        "プロジェクトを通じた課題解決",
+        "AI・データサイエンスの学習",
       ],
     },
   },
   {
-    title: { en: "Tools & workflow", mn: "Хэрэгсэл, ажлын явц" },
+    title: { en: "Tools & workflow", ja: "ツール・ワークフロー" },
     icon: Workflow,
     items: {
       en: [
@@ -106,10 +112,10 @@ const skills = [
         "Linux fundamentals",
         "Vite, Firebase & Vercel",
       ],
-      mn: [
-        "Git, GitHub хувилбарын удирдлага",
-        "Linux суурь мэдлэг",
-        "Vite, Firebase, Vercel",
+      ja: [
+        "Git・GitHubによるバージョン管理",
+        "Linuxの基礎",
+        "Vite・Firebase・Vercel",
       ],
     },
   },
@@ -137,16 +143,16 @@ export function Experience() {
     <div className="page-content dashboard-page">
       <div className="dashboard-heading">
         <p className="eyebrow">
-          {t({ en: "THE ROAD SO FAR", mn: "МИНИЙ ЗАМНАЛ" })}
+          {t({ en: "THE ROAD SO FAR", ja: "これまでの歩み" })}
         </p>
         <h1>
-          {t({ en: "Experience", mn: "Туршлага" })}
+          {t({ en: "Experience", ja: "経験・スキル" })}
           <span className="accent">.</span>
         </h1>
         <p>
           {t({
             en: "My journey, the skills I’m building, and the tools I work with.",
-            mn: "Миний замнал, хөгжүүлж буй ур чадвар, ашигладаг хэрэгслүүд.",
+            ja: "これまでの歩み、磨いているスキル、日々使っているツールをご紹介します。",
           })}
         </p>
       </div>
@@ -154,7 +160,7 @@ export function Experience() {
         <div className="experience-main">
           <section className="dashboard-card journey-panel">
             <div className="card-heading">
-              <h2>{t({ en: "My Journey", mn: "Миний замнал" })}</h2>
+              <h2>{t({ en: "My Journey", ja: "これまでの歩み" })}</h2>
               <span className="card-kicker">01 /</span>
             </div>
             <div className="career-timeline">
@@ -178,7 +184,7 @@ export function Experience() {
           </section>
           <section className="dashboard-card">
             <div className="card-heading">
-              <h2>{t({ en: "Skills", mn: "Ур чадвар" })}</h2>
+              <h2>{t({ en: "Skills", ja: "スキル" })}</h2>
               <span className="card-kicker">02 /</span>
             </div>
             <div className="skills-dashboard">
@@ -200,13 +206,13 @@ export function Experience() {
           <PlatformSwitcher />
           <section className="dashboard-card current-stack">
             <div className="card-heading">
-              <h2>{t({ en: "Current Stack", mn: "Одоогийн stack" })}</h2>
+              <h2>{t({ en: "Current Stack", ja: "使用している技術" })}</h2>
               <span className="card-kicker">03 /</span>
             </div>
             <p className="card-description">
               {t({
                 en: "What I’m building with right now.",
-                mn: "Одоо ашиглаж буй технологиуд.",
+                ja: "現在の開発で使用している技術です。",
               })}
             </p>
             <div className="stack-chips">
@@ -222,13 +228,13 @@ export function Experience() {
           </section>
           <section className="dashboard-card certifications">
             <div className="card-heading">
-              <h2>{t({ en: "Certifications", mn: "Сертификатууд" })}</h2>
+              <h2>{t({ en: "Certifications", ja: "修了証・認定" })}</h2>
               <Award size={19} aria-hidden="true" />
             </div>
             <p className="card-description">
               {t({
                 en: "Courses completed. Learning continues.",
-                mn: "Дуусгасан сургалтууд. Суралцах зам үргэлжилнэ.",
+                ja: "修了したコースをご紹介します。学びはこれからも続きます。",
               })}
             </p>
             {certifications.map((cert) => (

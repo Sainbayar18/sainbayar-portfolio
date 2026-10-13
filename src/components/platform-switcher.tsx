@@ -12,11 +12,17 @@ export function PlatformSwitcher() {
   return (
     <section
       className="platform-switcher"
-      aria-label={t({ en: "Freelance profiles", mn: "Фриланс профайлууд" })}
+      aria-label={t({
+        en: "Freelance profiles",
+        ja: "フリーランスのプロフィール",
+      })}
     >
       <div
         className="platform-buttons"
-        aria-label={t({ en: "Choose a platform", mn: "Платформ сонгох" })}
+        aria-label={t({
+          en: "Choose a platform",
+          ja: "プラットフォームを選択",
+        })}
       >
         {["Upwork", "uTest"].map((name) => (
           <button

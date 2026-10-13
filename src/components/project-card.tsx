@@ -16,7 +16,7 @@ export function ProjectCard({
         <ProjectArt kind={project.art} />
         {project.sample ? (
           <span className="sample-label">
-            {t({ en: "SAMPLE CONCEPT", mn: "ЖИШЭЭ КОНЦЕПТ" })}
+            {t({ en: "SAMPLE CONCEPT", ja: "コンセプト例" })}
           </span>
         ) : null}
       </div>
@@ -29,10 +29,7 @@ export function ProjectCard({
                 project.category === "Web"
                   ? "Web development"
                   : "Interface design",
-              mn:
-                project.category === "Web"
-                  ? "Вэб хөгжүүлэлт"
-                  : "Интерфэйс дизайн",
+              ja: project.category === "Web" ? "Web開発" : "UIデザイン",
             })}
           </span>
         </div>
@@ -47,7 +44,7 @@ export function ProjectCard({
           ))}
         </div>
         <span className="project-card-action">
-          {t({ en: "Explore project", mn: "Төсөлтэй танилцах" })}
+          {t({ en: "Explore project", ja: "プロジェクトの詳細を見る" })}
           <ArrowUpRight size={16} aria-hidden="true" />
         </span>
       </div>

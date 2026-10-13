@@ -43,7 +43,7 @@ export function Preferences({ children }: { children: ReactNode }) {
   const locale = useSyncExternalStore(
     subscribe,
     () =>
-      readPreference("portfolio-language-v1", "en") === "mn" ? "mn" : "en",
+      readPreference("portfolio-language-v1", "en") === "ja" ? "ja" : "en",
     () => "en",
   ) as Locale;
   const theme = useSyncExternalStore(
@@ -66,7 +66,7 @@ export function Preferences({ children }: { children: ReactNode }) {
         toggleLocale: () =>
           savePreference(
             "portfolio-language-v1",
-            locale === "en" ? "mn" : "en",
+            locale === "en" ? "ja" : "en",
           ),
         toggleTheme: () =>
           savePreference(
@@ -81,3 +81,12 @@ export function Preferences({ children }: { children: ReactNode }) {
   );
 }
 export const usePreferences = () => useContext(PreferencesContext);
+
+export function SkipLink() {
+  const { t } = usePreferences();
+  return (
+    <a href="#main-content" className="skip-link">
+      {t({ en: "Skip to content", ja: "メインコンテンツに移動" })}
+    </a>
+  );
+}

@@ -18,7 +18,7 @@ export function UtestCard() {
     >
       <div className="upwork-card-top">
         <span className="eyebrow">
-          {t({ en: "FIND ME ON", mn: "МИНИЙ ПРОФАЙЛ" })}
+          {t({ en: "FIND ME ON", ja: "プロフィール" })}
         </span>
         <span className="upwork-wordmark">uTest</span>
       </div>
@@ -41,23 +41,23 @@ export function UtestCard() {
       <p className="upwork-title">{t(utest.title)}</p>
       <dl className="upwork-stats">
         <div>
-          <dt>{t({ en: "Tester rating", mn: "Тестерийн зэрэг" })}</dt>
+          <dt>{t({ en: "Tester rating", ja: "テスター評価" })}</dt>
           <dd className="utest-rating">{t(utest.rating)}</dd>
         </div>
         <div>
-          <dt>{t({ en: "Joined uTest", mn: "Элссэн он" })}</dt>
+          <dt>{t({ en: "Joined uTest", ja: "uTest登録年" })}</dt>
           <dd>{utest.joinedYear}</dd>
         </div>
       </dl>
       <span className="upwork-cta">
-        {t({ en: "View uTest profile", mn: "uTest профайл үзэх" })}
+        {t({ en: "View uTest profile", ja: "uTestプロフィールを見る" })}
         <ArrowUpRight size={19} aria-hidden="true" />
         <span className="sr-only">
-          {t({ en: " (opens in a new tab)", mn: " (шинэ tab-д нээгдэнэ)" })}
+          {t({ en: " (opens in a new tab)", ja: "（新しいタブで開きます）" })}
         </span>
       </span>
       <span className="upwork-updated">
-        {t({ en: "Profile snapshot", mn: "Профайлын мэдээлэл" })} ·{" "}
+        {t({ en: "Profile snapshot", ja: "プロフィール情報" })} ·{" "}
         {t(utest.updated)}
       </span>
     </a>

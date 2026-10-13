@@ -52,8 +52,8 @@ export function GitHubActivity({ initialDate }: { initialDate: string }) {
   const firstDay = new Date(`${year}-01-01T00:00:00Z`).getUTCDay();
   const dayCount = (Date.UTC(year + 1, 0, 1) - Date.UTC(year, 0, 1)) / 86400000;
   const months =
-    locale === "mn"
-      ? Array.from({ length: 12 }, (_, i) => `${i + 1}`)
+    locale === "ja"
+      ? Array.from({ length: 12 }, (_, i) => `${i + 1}月`)
       : [
           "Jan",
           "Feb",
@@ -72,7 +72,8 @@ export function GitHubActivity({ initialDate }: { initialDate: string }) {
     <section className="dashboard-card github-card">
       <div className="card-heading">
         <h2>
-          <Github size={20} aria-hidden="true" /> GitHub Activity
+          <Github size={20} aria-hidden="true" />{" "}
+          {t({ en: "GitHub Activity", ja: "GitHubの活動" })}
         </h2>
         <a
           href={profile.github}
@@ -80,7 +81,7 @@ export function GitHubActivity({ initialDate }: { initialDate: string }) {
           rel="noopener noreferrer"
           aria-label={t({
             en: "View GitHub profile",
-            mn: "GitHub профайл үзэх",
+            ja: "GitHubプロフィールを見る",
           })}
         >
           <ArrowUpRight size={18} />
@@ -90,7 +91,10 @@ export function GitHubActivity({ initialDate }: { initialDate: string }) {
         <p>@Sainbayar18</p>
         <div
           className="activity-years"
-          aria-label={t({ en: "Contribution year", mn: "Contribution он" })}
+          aria-label={t({
+            en: "Contribution year",
+            ja: "コントリビューションの年",
+          })}
         >
           {Array.from(
             { length: currentYear - 2023 + 1 },
@@ -114,7 +118,7 @@ export function GitHubActivity({ initialDate }: { initialDate: string }) {
             role="group"
             aria-label={t({
               en: `${year} public contribution calendar. Scroll horizontally to explore.`,
-              mn: `${year} оны нийтэд нээлттэй contribution график. Хажуу тийш гүйлгэж үзнэ үү.`,
+              ja: `${year}年の公開コントリビューション。横にスクロールして確認できます。`,
             })}
           >
             <div className="calendar-inner">
@@ -126,7 +130,7 @@ export function GitHubActivity({ initialDate }: { initialDate: string }) {
               <div
                 className="contribution-grid"
                 role="img"
-                aria-label={`${stats.total} ${t({ en: "public contributions", mn: "нийтэд нээлттэй contribution" })} · ${year}`}
+                aria-label={`${stats.total} ${t({ en: "public contributions", ja: "公開コントリビューション" })} · ${year}`}
               >
                 {Array.from({ length: firstDay }, (_, i) => (
                   <span
@@ -146,7 +150,7 @@ export function GitHubActivity({ initialDate }: { initialDate: string }) {
                       title={
                         date > today
                           ? date
-                          : `${date}: ${day ? `${day.count} ${t({ en: "contributions", mn: "contribution" })}` : t({ en: "not yet refreshed", mn: "хараахан шинэчлэгдээгүй" })}`
+                          : `${date}: ${day ? `${day.count} ${t({ en: "contributions", ja: "コントリビューション" })}` : t({ en: "not yet refreshed", ja: "未更新" })}`
                       }
                       aria-hidden="true"
                     />
@@ -160,11 +164,11 @@ export function GitHubActivity({ initialDate }: { initialDate: string }) {
               <strong>{stats.total}</strong>{" "}
               {t({
                 en: "public contributions",
-                mn: "нийтэд нээлттэй contribution",
+                ja: "公開コントリビューション",
               })}
             </p>
             <span>
-              {t({ en: "Less", mn: "Бага" })}
+              {t({ en: "Less", ja: "少ない" })}
               {[0, 1, 2, 3, 4].map((level) => (
                 <i
                   key={level}
@@ -172,16 +176,16 @@ export function GitHubActivity({ initialDate }: { initialDate: string }) {
                   aria-hidden="true"
                 />
               ))}
-              {t({ en: "More", mn: "Их" })}
+              {t({ en: "More", ja: "多い" })}
             </span>
           </div>
           <div className="activity-stats">
             <div>
               <GitBranch size={18} aria-hidden="true" />
               <span>
-                {t({ en: "Current streak", mn: "Одоогийн дараалал" })}
+                {t({ en: "Current streak", ja: "現在の連続日数" })}
                 <strong>
-                  {stats.current} <small>{t({ en: "days", mn: "өдөр" })}</small>
+                  {stats.current} <small>{t({ en: "days", ja: "日" })}</small>
                 </strong>
               </span>
             </div>
@@ -190,9 +194,9 @@ export function GitHubActivity({ initialDate }: { initialDate: string }) {
                 ✳
               </span>
               <span>
-                {t({ en: "Longest streak", mn: "Хамгийн урт дараалал" })}
+                {t({ en: "Longest streak", ja: "最長の連続日数" })}
                 <strong>
-                  {stats.longest} <small>{t({ en: "days", mn: "өдөр" })}</small>
+                  {stats.longest} <small>{t({ en: "days", ja: "日" })}</small>
                 </strong>
               </span>
             </div>
@@ -201,15 +205,15 @@ export function GitHubActivity({ initialDate }: { initialDate: string }) {
             {data.source === "snapshot"
               ? t({
                   en: "Public GitHub snapshot",
-                  mn: "GitHub-ийн нийтэд нээлттэй мэдээлэл",
+                  ja: "GitHub公開データの記録",
                 })
               : t({
                   en: "Synced from public GitHub",
-                  mn: "GitHub-ээс шинэчилсэн",
+                  ja: "GitHubの公開データから更新",
                 })}{" "}
             · {data.updated}
             {result?.year !== year
-              ? ` · ${t({ en: "Refreshing…", mn: "Шинэчилж байна…" })}`
+              ? ` · ${t({ en: "Refreshing…", ja: "更新中…" })}`
               : ""}
           </p>
         </>
@@ -220,11 +224,11 @@ export function GitHubActivity({ initialDate }: { initialDate: string }) {
             {result?.year === year
               ? t({
                   en: "GitHub activity is temporarily unavailable.",
-                  mn: "GitHub activity-г одоогоор татаж чадсангүй.",
+                  ja: "GitHubの活動データを現在取得できません。",
                 })
               : t({
                   en: "Loading GitHub activity…",
-                  mn: "GitHub activity-г татаж байна…",
+                  ja: "GitHubの活動データを読み込み中…",
                 })}
           </p>
           {result?.year === year ? (
@@ -232,7 +236,7 @@ export function GitHubActivity({ initialDate }: { initialDate: string }) {
               className="text-link"
               onClick={() => setRetry((value) => value + 1)}
             >
-              {t({ en: "Try again", mn: "Дахин оролдох" })}
+              {t({ en: "Try again", ja: "再試行" })}
             </button>
           ) : null}
         </div>

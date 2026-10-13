@@ -34,7 +34,7 @@ export function Contact() {
       setStatus(
         t({
           en: "Your email app will open. Send the message from there.",
-          mn: "Имэйл апп нээгдэнэ. Тэндээс зурвасаа илгээгээрэй.",
+          ja: "メールアプリが開きます。そこからメッセージを送信してください。",
         }),
       );
     } else {
@@ -45,7 +45,7 @@ export function Contact() {
         setStatus(
           t({
             en: "Message copied. Open Upwork and paste it into a message to me.",
-            mn: "Зурвасыг хууллаа. Upwork нээгээд надад илгээх зурвастаа paste хийгээрэй.",
+            ja: "メッセージをコピーしました。Upworkを開き、メッセージ欄に貼り付けて送信してください。",
           }),
         );
       } catch {
@@ -53,7 +53,7 @@ export function Contact() {
         setStatus(
           t({
             en: "Could not copy automatically. Select your text and copy it manually.",
-            mn: "Автоматаар хуулж чадсангүй. Бичсэн текстээ сонгож гараар хуулна уу.",
+            ja: "自動でコピーできませんでした。入力した内容を選択して、手動でコピーしてください。",
           }),
         );
       }
@@ -65,47 +65,47 @@ export function Contact() {
         <p className="eyebrow">
           {t({
             en: "GOOD THINGS START WITH A CONVERSATION",
-            mn: "САЙН БҮТЭЭЛ ЯРИАНААС ЭХЭЛНЭ",
+            ja: "まずは、お話ししましょう",
           })}
         </p>
         <h1>
-          {t({ en: "Contact", mn: "Холбогдох" })}
+          {t({ en: "Contact", ja: "お問い合わせ" })}
           <span className="accent">.</span>
         </h1>
         <p>
           {t({
             en: "Let’s connect about a project, a testing opportunity, or an idea.",
-            mn: "Төсөл, тестийн ажил эсвэл шинэ санааны талаар ярилцъя.",
+            ja: "開発やテストのご相談、新しいアイデアについて、お気軽にご連絡ください。",
           })}
         </p>
       </div>
       <div className="contact-layout">
         <form className="contact-form" onSubmit={handleSubmit}>
-          <h2>{t({ en: "Let’s talk", mn: "Ярилцъя" })}</h2>
+          <h2>{t({ en: "Let’s talk", ja: "メッセージを準備する" })}</h2>
           <p className="card-description">
             {profile.email
               ? t({
                   en: "Tell me what you have in mind. This form prepares an email in your email app.",
-                  mn: "Санаагаа хуваалцаарай. Маягт нь имэйл апп дээр зурвас бэлтгэнэ.",
+                  ja: "ご相談内容をお聞かせください。このフォームからメールアプリで送信用のメールを作成できます。",
                 })
               : t({
                   en: "Prepare a message, copy it, and send it to me on Upwork.",
-                  mn: "Зурвасаа бэлдэж, хуулж аваад Upwork-оор надад илгээгээрэй.",
+                  ja: "メッセージを作成してコピーし、Upworkからお送りください。",
                 })}
           </p>
           <div className="form-row">
             <label>
-              {t({ en: "Your name", mn: "Таны нэр" })}
+              {t({ en: "Your name", ja: "お名前" })}
               <input
                 name="name"
                 autoComplete="name"
                 required
                 maxLength={120}
-                placeholder={t({ en: "Your name", mn: "Нэрээ бичээрэй" })}
+                placeholder={t({ en: "Your name", ja: "お名前" })}
               />
             </label>
             <label>
-              {t({ en: "Email address", mn: "Имэйл хаяг" })}
+              {t({ en: "Email address", ja: "メールアドレス" })}
               <input
                 name="email"
                 type="email"
@@ -117,19 +117,19 @@ export function Contact() {
             </label>
           </div>
           <label>
-            {t({ en: "Subject", mn: "Гарчиг" })}
+            {t({ en: "Subject", ja: "件名" })}
             <input
               name="subject"
               required
               maxLength={160}
               placeholder={t({
                 en: "What would you like to work on?",
-                mn: "Ямар ажил дээр хамтрах вэ?",
+                ja: "ご相談の内容をお書きください",
               })}
             />
           </label>
           <label>
-            {t({ en: "Message", mn: "Зурвас" })}
+            {t({ en: "Message", ja: "メッセージ" })}
             <textarea
               name="message"
               required
@@ -138,7 +138,7 @@ export function Contact() {
               rows={6}
               placeholder={t({
                 en: "Tell me about your idea, what you need, and your timeline…",
-                mn: "Санаа, хэрэгцээ, хугацааныхаа талаар бичээрэй…",
+                ja: "アイデア、ご希望の内容、スケジュールなどをお聞かせください…",
               })}
             />
           </label>
@@ -148,16 +148,16 @@ export function Contact() {
             disabled={copyState === "pending"}
           >
             {copyState === "pending" ? (
-              t({ en: "Copying…", mn: "Хуулж байна…" })
+              t({ en: "Copying…", ja: "コピー中…" })
             ) : profile.email ? (
               <>
                 <Send size={17} />
-                {t({ en: "Prepare email", mn: "Имэйл бэлдэх" })}
+                {t({ en: "Prepare email", ja: "メールを作成" })}
               </>
             ) : (
               <>
                 <Copy size={17} />
-                {t({ en: "Copy message", mn: "Зурвас хуулах" })}
+                {t({ en: "Copy message", ja: "メッセージをコピー" })}
               </>
             )}
           </button>
@@ -170,7 +170,7 @@ export function Contact() {
             {status ||
               t({
                 en: "Your message is sent only when you send it from your email app or Upwork.",
-                mn: "Зурвас нь имэйл апп эсвэл Upwork дээрээс илгээх үед л илгээгдэнэ.",
+                ja: "このフォームから直接送信はされません。メールアプリまたはUpworkで送信してください。",
               })}
           </p>
           {copyState === "success" ? (
@@ -182,7 +182,7 @@ export function Contact() {
             >
               {t({
                 en: "Open Upwork to send your message",
-                mn: "Upwork нээж зурвасаа илгээх",
+                ja: "Upworkを開いてメッセージを送る",
               })}
               <ArrowUpRight size={16} aria-hidden="true" />
             </a>
@@ -205,7 +205,7 @@ export function Contact() {
             <p>
               {t({
                 en: "Web development & software testing.",
-                mn: "Вэб хөгжүүлэлт, программын тест.",
+                ja: "Web開発・ソフトウェアテスト。",
               })}
             </p>
             <a
@@ -214,7 +214,7 @@ export function Contact() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {t({ en: "Connect on Upwork", mn: "Upwork-оор холбогдох" })}
+              {t({ en: "Connect on Upwork", ja: "Upworkで連絡する" })}
               <ArrowUpRight size={16} />
             </a>
           </section>
@@ -224,7 +224,7 @@ export function Contact() {
             <p>
               {t({
                 en: "Find my tester profile and community activity.",
-                mn: "Тестерийн профайл, community дахь мэдээлэл.",
+                ja: "テスターとしてのプロフィールやコミュニティでの活動をご覧いただけます。",
               })}
             </p>
             <a
@@ -233,28 +233,33 @@ export function Contact() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {t({ en: "View tester profile", mn: "Тестерийн профайл үзэх" })}
+              {t({
+                en: "View tester profile",
+                ja: "テスタープロフィールを見る",
+              })}
               <ArrowUpRight size={16} />
             </a>
           </section>
           <section className="dashboard-card contact-method">
             <MapPin size={22} />
-            <h2>{t({ en: "Location", mn: "Байршил" })}</h2>
-            <p>{t({ en: "Tokyo, Japan", mn: "Токио, Япон" })}</p>
+            <h2>{t({ en: "Location", ja: "拠点" })}</h2>
+            <p>{t({ en: "Tokyo, Japan", ja: "日本・東京" })}</p>
             <p className="card-description">
               {t({
                 en: "Japan Standard Time · UTC+9",
-                mn: "Японы цаг · UTC+9",
+                ja: "日本標準時 · UTC+9",
               })}
             </p>
           </section>
           <section className="dashboard-card contact-method">
-            <h2>{t({ en: "Elsewhere online", mn: "Сошиал профайлууд" })}</h2>
+            <h2>
+              {t({ en: "Elsewhere online", ja: "SNS・各種プロフィール" })}
+            </h2>
             <SocialLinks />
             <p className="card-description">
               {t({
                 en: "More profile links coming soon.",
-                mn: "Бусад профайлын линк удахгүй нэмэгдэнэ.",
+                ja: "その他のプロフィールへのリンクは近日追加予定です。",
               })}
             </p>
           </section>

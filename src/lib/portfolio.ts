@@ -1,11 +1,11 @@
-export type Locale = "en" | "mn";
-export type Localized = { en: string; mn: string };
+export type Locale = "en" | "ja";
+export type Localized = { en: string; ja: string };
 export const profile = {
   name: "Sainbayar",
   initials: "S.",
   role: {
     en: "Developer & software tester",
-    mn: "Хөгжүүлэгч · Программ тестер",
+    ja: "開発者・ソフトウェアテスター",
   },
   // Add your real details here. Empty values are deliberately not rendered as links.
   email: "",
@@ -21,26 +21,26 @@ export const profile = {
     name: "Munkhzorig S.",
     photo: "/upwork-profile.jpg",
     title: "Web Development | JavaScript, Java, HTML, Programming Languages",
-    location: { en: "Tokyo, Japan", mn: "Токио, Япон" },
+    location: { en: "Tokyo, Japan", ja: "日本・東京" },
     jobSuccess: 100,
     totalJobs: 10,
     skills: ["JavaScript", "Java", "HTML"],
-    updated: { en: "October 2026", mn: "2026 оны 10-р сар" },
+    updated: { en: "October 2026", ja: "2026年10月" },
   },
   // Public uTest profile snapshot.
   utest: {
     url: "https://www.utest.com/profile/p2832054/about",
     name: "Sainbayar Munkhzorig",
     photo: "/utest-profile.jpg",
-    title: { en: "Software tester", mn: "Программ хангамжийн тестер" },
-    location: { en: "Japan", mn: "Япон" },
+    title: { en: "Software tester", ja: "ソフトウェアテスター" },
+    location: { en: "Japan", ja: "日本" },
     joinedYear: "2026",
-    rating: { en: "Unrated", mn: "Зэрэггүй" },
-    updated: { en: "13 October 2026", mn: "2026 оны 10-р сарын 13" },
+    rating: { en: "Unrated", ja: "評価なし" },
+    updated: { en: "13 October 2026", ja: "2026年10月13日" },
   },
   bio: {
     en: "I'm a Mongolian developer and software tester based in Japan. I build web interfaces, test real products, and keep learning at the intersection of code, quality, and AI.",
-    mn: "Би Японд амьдардаг монгол хөгжүүлэгч, программ хангамжийн тестер. Вэб интерфэйс бүтээж, бодит бүтээгдэхүүн тестэлж, код, чанар, хиймэл оюуны чиглэлээр тасралтгүй суралцаж байна.",
+    ja: "日本を拠点に活動する、モンゴル出身の開発者・ソフトウェアテスターです。WebのUI開発や実際の製品のテストに取り組み、コード、品質、AIの分野で学び続けています。",
   },
 };
 export const stack = [
@@ -64,11 +64,11 @@ export const projects = [
     sample: false,
     description: {
       en: "An e-learning portal for Mongol Kosen, with a Mongolian interface and teacher, student, and administrator sign-in options.",
-      mn: "Монгол Коосэны цахим сургалтын вэб. Монгол интерфэйс, багш, оюутан, админы нэвтрэх сонголттой.",
+      ja: "モンゴル高専のオンライン学習ポータル。モンゴル語のUIと、教員・学生・管理者それぞれのログイン選択肢を備えています。",
     },
     overview: {
       en: "LMS TCA is an education-focused web project with a Mongolian-language entry screen for Mongol Kosen Technology College. Its sign-in interface gives teachers, students, and administrators separate role choices.",
-      mn: "LMS TCA нь Монгол Коосэн Технологийн коллежийн нэр, таних тэмдэгтэй цахим сургалтын вэб төсөл. Нэвтрэх интерфэйс нь багш, оюутан, админ гэсэн тусдаа үүргийн сонголттой.",
+      ja: "LMS TCAは、モンゴル高専向けの教育用Webプロジェクトです。モンゴル語のログイン画面で、教員・学生・管理者の役割を選択できます。",
     },
     features: {
       en: [
@@ -77,11 +77,11 @@ export const projects = [
         "Username and password sign-in interface",
         "College branding and a dedicated education portal",
       ],
-      mn: [
-        "Монгол хэл дээрх цахим сургалтын нүүр",
-        "Багш, оюутан, админы үүрэг сонгох",
-        "Хэрэглэгчийн нэр, нууц үгээр нэвтрэх интерфэйс",
-        "Коллежийн нэр, таних тэмдэгтэй сургалтын портал",
+      ja: [
+        "モンゴル語のオンライン学習ログイン画面",
+        "教員・学生・管理者の役割選択",
+        "ユーザー名とパスワードによるログインUI",
+        "学校のブランドに合わせた学習ポータル",
       ],
     },
     liveUrl: "https://lms-tca.vercel.app/",
@@ -97,11 +97,11 @@ export const projects = [
     sample: false,
     description: {
       en: "A Mongolian manga reading app. Discover stories, explore the catalog, and read chapter by chapter.",
-      mn: "Монгол манга унших вэб апп. Шинэ түүх олж, мангагийн сангаас сонгон, бүлэг бүрээр уншина.",
+      ja: "モンゴル語のマンガ閲覧アプリ。作品を探し、カタログから選んで、各話を読み進められます。",
     },
     overview: {
       en: "Mangos brings manga discovery and reading into a Mongolian-language interface. The homepage highlights new chapters and featured stories, with search, genre filters, and a dedicated reading experience.",
-      mn: "Mangos нь манга хайх, сонгох, унших боломжийг монгол интерфэйст нэгтгэсэн. Нүүр хуудсанд онцлох манга, шинэ бүлгүүдийг харуулж, хайлт, жанрын шүүлтүүр болон тусдаа унших хуудастай.",
+      ja: "Mangosは、マンガを探して読む体験をモンゴル語のUIにまとめたアプリです。ホームでは新着話やおすすめ作品を紹介し、検索、ジャンルの絞り込み、専用の閲覧画面を備えています。",
     },
     features: {
       en: [
@@ -110,11 +110,11 @@ export const projects = [
         "Featured stories and recently added chapters",
         "Chapter reading and light / dark themes",
       ],
-      mn: [
-        "Монгол интерфэйс, мангагийн сан",
-        "Хайлт болон жанраар шүүх",
-        "Онцлох манга, шинээр нэмэгдсэн бүлгүүд",
-        "Бүлэг унших, цайвар / бараан горим",
+      ja: [
+        "モンゴル語のUIとマンガカタログ",
+        "検索・ジャンルによる絞り込み",
+        "おすすめ作品と新着話の紹介",
+        "各話の閲覧とライト・ダークテーマ",
       ],
     },
     liveUrl: "https://mangos-lime.vercel.app/",
@@ -130,24 +130,24 @@ export const projects = [
     sample: false,
     description: {
       en: "A little corner of the internet, designed to feel like me.",
-      mn: "Миний өнгө төрхийг илэрхийлэх интернэтийн жижигхэн орон зай.",
+      ja: "自分らしさを表現する、インターネット上の小さな居場所。",
     },
     overview: {
       en: "An original portfolio built with the Next.js App Router. The design pairs deep forest tones with an editorial layout, a custom geometric identity, and carefully considered interactions.",
-      mn: "Next.js App Router ашиглан бүтээсэн өөрийн загвартай portfolio. Гүн ногоон өнгө, том typography, геометр дүрслэл болон ойлгомжтой үйлдлүүдийг нэгтгэсэн.",
+      ja: "Next.jsのApp Routerで構築したオリジナルのポートフォリオ。深いグリーン、読みやすいレイアウト、独自の幾何学的なモチーフ、使いやすさを考えた操作を組み合わせています。",
     },
     features: {
       en: [
-        "English and Mongolian language switching",
+        "English and Japanese language switching",
         "Persistent light and dark themes",
         "Responsive layouts and accessible navigation",
         "Project filtering and individual project pages",
       ],
-      mn: [
-        "Англи, монгол хэл солих",
-        "Light/dark theme сонголт хадгалах",
-        "Гар утсанд тохирсон загвар, хүртээмжтэй navigation",
-        "Төсөл шүүх, төслийн дэлгэрэнгүй хуудас",
+      ja: [
+        "英語・日本語の切り替え",
+        "ライト・ダークテーマの選択を保存",
+        "レスポンシブなレイアウトと使いやすいナビゲーション",
+        "プロジェクトの絞り込みと各プロジェクトの詳細ページ",
       ],
     },
     liveUrl: "/",
@@ -163,11 +163,11 @@ export const projects = [
     sample: true,
     description: {
       en: "A calmer way to organize the everyday. A sample product concept.",
-      mn: "Өдөр тутмын ажлаа тайван цэгцлэх бүтээгдэхүүний жишээ санаа.",
+      ja: "日々の作業を落ち着いて整理するための、プロダクトコンセプト例。",
     },
     overview: {
       en: "A sample workspace concept to demonstrate the project layout. The idea brings tasks, notes, and a focus timer into one quiet interface. Replace this entry with a real project when you’re ready.",
-      mn: "Төслийн хэсгийн загварыг харуулах жишээ концепт. Ажил, тэмдэглэл, төвлөрөх цагийг нэг интерфэйст нэгтгэх санаа. Өөрийн бодит төслөөр солих зориулалттай.",
+      ja: "タスク、メモ、集中タイマーを一つの落ち着いたUIにまとめたワークスペースのコンセプト例です。プロジェクト紹介のレイアウトを示すサンプルとして掲載しています。",
     },
     features: {
       en: [
@@ -175,10 +175,10 @@ export const projects = [
         "A minimal timer interface",
         "Soft colors and clear information hierarchy",
       ],
-      mn: [
-        "Ажлын жагсаалтын санаа",
-        "Минимал таймер интерфэйс",
-        "Зөөлөн өнгө, тодорхой мэдээллийн бүтэц",
+      ja: [
+        "集中しやすいタスク一覧のコンセプト",
+        "シンプルなタイマーUI",
+        "柔らかい色とわかりやすい情報の階層",
       ],
     },
     liveUrl: "",
@@ -194,11 +194,11 @@ export const projects = [
     sample: true,
     description: {
       en: "Wide horizons, thoughtful details. A sample visual exploration.",
-      mn: "Уудам тал, нямбай шийдэл. Вэб дизайны жишээ концепт.",
+      ja: "広がる地平線と丁寧なディテール。ビジュアルデザインのコンセプト例。",
     },
     overview: {
       en: "A sample website direction inspired by open landscapes and warm, natural materials. This is a visual concept, not a completed client engagement. Use this space to tell the story of your own work.",
-      mn: "Уудам тал, байгалийн дулаан өнгөнөөс санаа авсан вэб загварын жишээ. Захиалагчийн бодит ажил биш, дизайны концепт юм. Энэ хэсгийг өөрийн бүтээлийн түүхээр солиорой.",
+      ja: "広々とした風景や、温かみのある自然素材から着想を得たWebデザイン案です。完成したクライアント案件ではなく、ビジュアルのコンセプト例として掲載しています。",
     },
     features: {
       en: [
@@ -206,10 +206,10 @@ export const projects = [
         "Editorial typography direction",
         "A simple, spacious layout concept",
       ],
-      mn: [
-        "Байгалийн өнгөний сонголт",
-        "Том typography",
-        "Энгийн, зай сайтай зохиомж",
+      ja: [
+        "風景から着想を得たカラーパレット",
+        "読みやすさを重視したタイポグラフィ",
+        "シンプルで余白のあるレイアウト案",
       ],
     },
     liveUrl: "",

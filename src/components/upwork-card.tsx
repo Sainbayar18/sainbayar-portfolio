@@ -18,7 +18,7 @@ export function UpworkCard() {
     >
       <div className="upwork-card-top">
         <span className="eyebrow">
-          {t({ en: "FIND ME ON", mn: "МИНИЙ ПРОФАЙЛ" })}
+          {t({ en: "FIND ME ON", ja: "プロフィール" })}
         </span>
         <span className="upwork-wordmark">upwork</span>
       </div>
@@ -38,14 +38,19 @@ export function UpworkCard() {
           </p>
         </div>
       </div>
-      <p className="upwork-title">{upwork.title}</p>
+      <p className="upwork-title">
+        {t({
+          en: upwork.title,
+          ja: "Web開発 | JavaScript・Java・HTML・プログラミング",
+        })}
+      </p>
       <dl className="upwork-stats">
         <div>
-          <dt>{t({ en: "Job Success", mn: "Ажлын амжилт" })}</dt>
+          <dt>{t({ en: "Job Success", ja: "案件成功率" })}</dt>
           <dd>{upwork.jobSuccess}%</dd>
         </div>
         <div>
-          <dt>{t({ en: "Total jobs", mn: "Нийт ажил" })}</dt>
+          <dt>{t({ en: "Total jobs", ja: "総案件数" })}</dt>
           <dd>{upwork.totalJobs}</dd>
         </div>
       </dl>
@@ -55,14 +60,14 @@ export function UpworkCard() {
         ))}
       </div>
       <span className="upwork-cta">
-        {t({ en: "View Upwork profile", mn: "Upwork профайл үзэх" })}
+        {t({ en: "View Upwork profile", ja: "Upworkプロフィールを見る" })}
         <ArrowUpRight size={19} aria-hidden="true" />
         <span className="sr-only">
-          {t({ en: " (opens in a new tab)", mn: " (шинэ tab-д нээгдэнэ)" })}
+          {t({ en: " (opens in a new tab)", ja: "（新しいタブで開きます）" })}
         </span>
       </span>
       <span className="upwork-updated">
-        {t({ en: "Profile snapshot", mn: "Профайлын мэдээлэл" })} ·{" "}
+        {t({ en: "Profile snapshot", ja: "プロフィール情報" })} ·{" "}
         {t(upwork.updated)}
       </span>
     </a>

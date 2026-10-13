@@ -13,11 +13,14 @@ export function Footer() {
           <p className="eyebrow">
             {t({
               en: "HAVE SOMETHING IN MIND?",
-              mn: "ХАМТДАА БҮТЭЭХ САНАА БАЙНА УУ?",
+              ja: "一緒につくりたいものはありますか？",
             })}
           </p>
           <Link href="/contact" className="footer-cta">
-            {t({ en: "Let’s make it happen.", mn: "Хамтдаа хэрэгжүүлье." })}
+            {t({
+              en: "Let’s make it happen.",
+              ja: "一緒に、かたちにしましょう。",
+            })}
             <ArrowUpRight />
           </Link>
         </div>
@@ -64,10 +67,10 @@ export function Footer() {
         <span>
           {t({
             en: "Built with intention. And Next.js.",
-            mn: "Сэтгэл шингээж, Next.js-ээр бүтээв.",
+            ja: "こだわりと、Next.jsでつくりました。",
           })}
         </span>
-        <a href="#top">{t({ en: "Back to top", mn: "Дээш буцах" })} ↑</a>
+        <a href="#top">{t({ en: "Back to top", ja: "ページの先頭へ" })} ↑</a>
       </div>
     </footer>
   );

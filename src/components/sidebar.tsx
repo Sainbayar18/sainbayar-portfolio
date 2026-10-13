@@ -21,19 +21,25 @@ import { usePreferences } from "./preferences";
 import { SocialLinks } from "./social-links";
 
 const navigation = [
-  { href: "/", en: "Dashboard", mn: "Нүүр", icon: House },
-  { href: "/projects", en: "Projects", mn: "Төслүүд", icon: FolderKanban },
-  { href: "/experience", en: "Experience", mn: "Туршлага", icon: Milestone },
-  { href: "/about", en: "About", mn: "Миний тухай", icon: UserRound },
-  { href: "/contact", en: "Contact", mn: "Холбогдох", icon: Send },
+  { href: "/", en: "Dashboard", ja: "ホーム", icon: House },
+  { href: "/projects", en: "Projects", ja: "プロジェクト", icon: FolderKanban },
+  {
+    href: "/experience",
+    en: "Experience",
+    ja: "経験・スキル",
+    icon: Milestone,
+  },
+  { href: "/about", en: "About", ja: "自己紹介", icon: UserRound },
+  { href: "/contact", en: "Contact", ja: "お問い合わせ", icon: Send },
 ];
 
 function Wordmark({ onNavigate }: { onNavigate?: () => void }) {
+  const { t } = usePreferences();
   return (
     <Link
       href="/"
       className="wordmark"
-      aria-label="Sainbayar home"
+      aria-label={t({ en: "Sainbayar home", ja: "Sainbayarのホーム" })}
       onClick={onNavigate}
     >
       <span className="brand-symbol">
@@ -122,12 +128,12 @@ export function Sidebar() {
         <button
           ref={toggleRef}
           className="sidebar-menu-toggle"
-          aria-label={t({ en: "Open menu", mn: "Цэс нээх" })}
+          aria-label={t({ en: "Open menu", ja: "メニューを開く" })}
           aria-expanded={open}
           aria-controls="portfolio-sidebar"
           onClick={() => setOpen(true)}
         >
-          <span>{t({ en: "Menu", mn: "Цэс" })}</span>
+          <span>{t({ en: "Menu", ja: "メニュー" })}</span>
           <Menu size={20} aria-hidden="true" />
         </button>
       </header>
@@ -143,7 +149,10 @@ export function Sidebar() {
         ref={panelRef}
         id="portfolio-sidebar"
         className={open ? "portfolio-sidebar is-open" : "portfolio-sidebar"}
-        aria-label={t({ en: "Portfolio navigation", mn: "Portfolio цэс" })}
+        aria-label={t({
+          en: "Portfolio navigation",
+          ja: "ポートフォリオのメニュー",
+        })}
         role={open ? "dialog" : undefined}
         aria-modal={open ? true : undefined}
       >
@@ -152,7 +161,7 @@ export function Sidebar() {
             <Wordmark onNavigate={() => setOpen(false)} />
             <button
               className="sidebar-close"
-              aria-label={t({ en: "Close sidebar", mn: "Sidebar хаах" })}
+              aria-label={t({ en: "Close sidebar", ja: "メニューを閉じる" })}
               onClick={() => setOpen(false)}
             >
               <X size={20} aria-hidden="true" />
@@ -181,10 +190,10 @@ export function Sidebar() {
           </div>
           <nav
             className="sidebar-nav"
-            aria-label={t({ en: "Main navigation", mn: "Үндсэн цэс" })}
+            aria-label={t({ en: "Main navigation", ja: "メインメニュー" })}
           >
             <p className="sidebar-label">
-              {t({ en: "EXPLORE", mn: "ХУУДСУУД" })}
+              {t({ en: "EXPLORE", ja: "ページ一覧" })}
             </p>
             {navigation.map((item, index) => {
               const active =
@@ -214,14 +223,12 @@ export function Sidebar() {
                 className="language-button"
                 onClick={toggleLocale}
                 aria-label={
-                  locale === "en"
-                    ? "Switch to Mongolian"
-                    : "Англи хэл рүү солих"
+                  locale === "en" ? "Switch to Japanese" : "英語に切り替える"
                 }
               >
-                {locale.toUpperCase()}
+                {locale === "en" ? "EN" : "JP"}
                 <span className="language-divider">/</span>
-                <span className="muted">{locale === "en" ? "MN" : "EN"}</span>
+                <span className="muted">{locale === "en" ? "JP" : "EN"}</span>
               </button>
               <button
                 className="icon-button theme-button"
@@ -231,10 +238,10 @@ export function Sidebar() {
                     theme === "dark"
                       ? "Switch to light theme"
                       : "Switch to dark theme",
-                  mn:
+                  ja:
                     theme === "dark"
-                      ? "Цайвар theme сонгох"
-                      : "Бараан theme сонгох",
+                      ? "ライトテーマに切り替える"
+                      : "ダークテーマに切り替える",
                 })}
               >
                 {theme === "dark" ? (
@@ -247,7 +254,7 @@ export function Sidebar() {
             <p className="sidebar-signoff">
               {t({
                 en: "A curious mind. A considered build.",
-                mn: "Сониуч сэтгэлгээ. Нямбай бүтээл.",
+                ja: "好奇心を大切に。丁寧なものづくりを。",
               })}
             </p>
           </div>

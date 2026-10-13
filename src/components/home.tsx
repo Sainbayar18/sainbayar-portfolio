@@ -21,61 +21,67 @@ export function Home({ initialDate }: { initialDate: string }) {
     <div className="page-content dashboard-page">
       <div className="dashboard-heading">
         <p className="eyebrow">
-          {t({ en: "SAINBAYAR’S PERSONAL SPACE", mn: "SAINBAYAR-ЫН ОРОН ЗАЙ" })}
+          {t({
+            en: "SAINBAYAR’S PERSONAL SPACE",
+            ja: "SAINBAYARのポートフォリオ",
+          })}
         </p>
         <h1>
-          {t({ en: "Dashboard", mn: "Нүүр" })}
+          {t({ en: "Dashboard", ja: "ホーム" })}
           <span className="accent">.</span>
         </h1>
         <p>
           {t({
             en: "A little of what I build, test, and learn.",
-            mn: "Миний бүтээж, тестэлж, сурч буй зүйлс.",
+            ja: "つくること、テストすること、学ぶこと。日々の取り組みをご紹介します。",
           })}
         </p>
       </div>
       <section className="dashboard-hero">
         <div className="dashboard-hero-copy">
           <p className="hero-hello">
-            {t({ en: "Hey, I’m Sainbayar", mn: "Сайн уу, би Sainbayar" })}{" "}
+            {t({ en: "Hey, I’m Sainbayar", ja: "こんにちは、Sainbayarです" })}{" "}
             <span aria-hidden="true">✳</span>
           </p>
           <h2>
-            {t({ en: "Building with care.", mn: "Нямбай бүтээнэ." })}
+            {t({ en: "Building with care.", ja: "丁寧につくる。" })}
             <br />
             <span className="hero-serif">
-              {t({ en: "Testing with curiosity.", mn: "Сониучаар тестэлнэ." })}
+              {t({
+                en: "Testing with curiosity.",
+                ja: "好奇心を持って、テストする。",
+              })}
             </span>
           </h2>
           <p>
             {t({
               en: "From thoughtful interfaces to the details that make products work. A Mongolian developer and tester, growing in Japan.",
-              mn: "Ойлгомжтой интерфэйсээс бүтээгдэхүүний нарийн ажиллагаа хүртэл. Японд хөгжиж буй монгол хөгжүүлэгч, тестер.",
+              ja: "使いやすいUIから、製品を支える細かな仕組みまで。日本で経験を積む、モンゴル出身の開発者・テスターです。",
             })}
           </p>
           <div className="hero-buttons">
             <Link className="button button-primary" href="/projects">
-              {t({ en: "View my work", mn: "Бүтээлүүд үзэх" })}
+              {t({ en: "View my work", ja: "制作実績を見る" })}
               <ArrowUpRight size={17} />
             </Link>
             <Link className="text-link" href="/experience">
-              {t({ en: "My journey", mn: "Миний замнал" })}
+              {t({ en: "My journey", ja: "これまでの歩み" })}
               <ArrowUpRight size={16} />
             </Link>
           </div>
         </div>
         <section className="hero-focus" aria-labelledby="hero-focus-heading">
           <p className="eyebrow" id="hero-focus-heading">
-            {t({ en: "WHAT I BRING", mn: "МИНИЙ ЧИГЛЭЛ" })}
+            {t({ en: "WHAT I BRING", ja: "取り組んでいること" })}
           </p>
           <div className="hero-focus-item">
             <Braces size={21} aria-hidden="true" />
             <div>
-              <h3>{t({ en: "Build", mn: "Хөгжүүлэх" })}</h3>
+              <h3>{t({ en: "Build", ja: "開発する" })}</h3>
               <p>
                 {t({
                   en: "Useful, responsive web experiences.",
-                  mn: "Хэрэглэхэд хялбар, responsive вэб.",
+                  ja: "使いやすく、さまざまな画面に対応するWeb体験。",
                 })}
               </p>
             </div>
@@ -83,11 +89,11 @@ export function Home({ initialDate }: { initialDate: string }) {
           <div className="hero-focus-item">
             <ShieldCheck size={21} aria-hidden="true" />
             <div>
-              <h3>{t({ en: "Test", mn: "Тестлэх" })}</h3>
+              <h3>{t({ en: "Test", ja: "テストする" })}</h3>
               <p>
                 {t({
                   en: "Real products. Attention to the details.",
-                  mn: "Бодит бүтээгдэхүүн. Нарийн зүйл бүрд анхаарах.",
+                  ja: "実際の製品を、細部まで丁寧に確認。",
                 })}
               </p>
             </div>
@@ -95,11 +101,11 @@ export function Home({ initialDate }: { initialDate: string }) {
           <div className="hero-focus-item">
             <BookOpen size={21} aria-hidden="true" />
             <div>
-              <h3>{t({ en: "Keep learning", mn: "Суралцах" })}</h3>
+              <h3>{t({ en: "Keep learning", ja: "学び続ける" })}</h3>
               <p>
                 {t({
                   en: "Code, quality, and the possibilities of AI.",
-                  mn: "Код, чанар, хиймэл оюуны боломжууд.",
+                  ja: "コード、品質、そしてAIの可能性。",
                 })}
               </p>
             </div>
@@ -108,7 +114,7 @@ export function Home({ initialDate }: { initialDate: string }) {
             <MapPin size={14} aria-hidden="true" />
             {t({
               en: "Mongolian roots · Based in Japan",
-              mn: "Монгол хүн · Японд амьдардаг",
+              ja: "モンゴル出身 · 日本在住",
             })}
           </p>
         </section>
@@ -117,12 +123,12 @@ export function Home({ initialDate }: { initialDate: string }) {
         <GitHubActivity initialDate={initialDate} />
         <section className="dashboard-card about-dashboard">
           <div className="card-heading">
-            <h2>{t({ en: "About", mn: "Миний тухай" })}</h2>
+            <h2>{t({ en: "About", ja: "自己紹介" })}</h2>
             <Link
               href="/about"
               aria-label={t({
                 en: "More about me",
-                mn: "Миний тухай дэлгэрэнгүй",
+                ja: "自己紹介を詳しく見る",
               })}
             >
               <ArrowUpRight size={18} />
@@ -145,16 +151,16 @@ export function Home({ initialDate }: { initialDate: string }) {
             <div>
               <dt>
                 <MapPin size={15} />
-                {t({ en: "Location", mn: "Байршил" })}
+                {t({ en: "Location", ja: "拠点" })}
               </dt>
-              <dd>Tokyo, Japan</dd>
+              <dd>{t(profile.upwork.location)}</dd>
             </div>
             <div>
               <dt>
                 <Braces size={15} />
-                {t({ en: "Focus", mn: "Чиглэл" })}
+                {t({ en: "Focus", ja: "専門・関心分野" })}
               </dt>
-              <dd>Web · QA · AI</dd>
+              <dd>{t({ en: "Web · QA · AI", ja: "Web開発・QA・AI" })}</dd>
             </div>
           </dl>
           <div className="about-profile-links">
@@ -184,9 +190,9 @@ export function Home({ initialDate }: { initialDate: string }) {
       </div>
       <section className="recent-projects" id="selected-work">
         <div className="card-heading">
-          <h2>{t({ en: "Recent Projects", mn: "Сүүлийн төслүүд" })}</h2>
+          <h2>{t({ en: "Recent Projects", ja: "最近のプロジェクト" })}</h2>
           <Link href="/projects" className="text-link">
-            {t({ en: "All projects", mn: "Бүх төсөл" })}
+            {t({ en: "All projects", ja: "すべてのプロジェクト" })}
             <ArrowUpRight size={16} />
           </Link>
         </div>
@@ -199,20 +205,23 @@ export function Home({ initialDate }: { initialDate: string }) {
       <section className="dashboard-contact">
         <div>
           <p className="eyebrow">
-            {t({ en: "LET’S CONNECT", mn: "ХОЛБОГДЪЁ" })}
+            {t({ en: "LET’S CONNECT", ja: "お気軽にご連絡ください" })}
           </p>
           <h2>
-            {t({ en: "Something in mind?", mn: "Ямар нэг санаа байна уу?" })}
+            {t({
+              en: "Something in mind?",
+              ja: "一緒に取り組みたいことはありますか？",
+            })}
           </h2>
           <p>
             {t({
               en: "A project, a testing opportunity, or a simple hello.",
-              mn: "Төсөл, тестийн ажил эсвэл энгийн мэндчилгээ.",
+              ja: "開発やテストのご相談、ご挨拶も歓迎です。",
             })}
           </p>
         </div>
         <Link href="/contact" className="button button-primary">
-          {t({ en: "Get in touch", mn: "Холбогдох" })}
+          {t({ en: "Get in touch", ja: "お問い合わせ" })}
           <ArrowUpRight size={18} />
         </Link>
       </section>
