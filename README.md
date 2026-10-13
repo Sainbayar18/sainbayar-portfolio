@@ -53,7 +53,7 @@ With `profile.email` empty, the form **copies a message** and explicitly says it
 
 ## GitHub activity
 
-`/api/github-activity?year=2026` reads the signed-out public GitHub profile for **Sainbayar18**, validates a complete calendar and its tooltip counts, and caches successful responses for one hour. Only public contribution counts are used; no token, private repositories, or account credentials are needed. If GitHub is unavailable, verified public snapshots in `src/lib/github-activity.ts` are shown with their snapshot date. Unknown years show a retry state rather than invented activity.
+`/api/github-activity?year=2026` reads GitHub's public `/users/Sainbayar18/contributions` calendar, validates a complete year and its tooltip counts, and caches successful responses for one hour. Only public contribution counts are used; no token, private repositories, or account credentials are needed. If GitHub is unavailable, verified public snapshots in `src/lib/github-activity.ts` are shown with their snapshot date. Unknown years show a retry state rather than invented activity.
 
 ## Design
 
