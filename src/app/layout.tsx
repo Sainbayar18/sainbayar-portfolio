@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Preferences } from "@/components/preferences";
 import { Header, Footer } from "@/components/shell";
 import "./globals.css";
+import "./sidebar.css";
 export const metadata: Metadata = {
   title: {
     default: "Sainbayar — Developer & Creative Thinker",
@@ -33,10 +34,12 @@ export default function RootLayout({
             Skip to content
           </a>
           <Header />
-          <main id="main-content" className="main-container">
-            {children}
-          </main>
-          <Footer />
+          <div id="site-frame" className="site-frame">
+            <main id="main-content" className="main-container" tabIndex={-1}>
+              {children}
+            </main>
+            <Footer />
+          </div>
         </Preferences>
       </body>
     </html>

@@ -43,7 +43,8 @@ Add résumé files to `public/` and set `profile.resume` to `/resume.pdf`. Blank
 - `/contact`: browser-side message preparation.
 - Custom 404, page metadata, and favicon.
 - English / Mongolian toggle and persistent light / dark themes.
-- Responsive navigation, keyboard focus, skip link, and reduced-motion support.
+- A personal sidebar with portrait, numbered navigation, Upwork/uTest links, and language/theme controls. On small screens it becomes a drawer with Escape dismissal, keyboard focus containment, and background scroll locking.
+- Responsive layouts, keyboard focus, skip link, and reduced-motion support.
 
 ## Contact form
 
