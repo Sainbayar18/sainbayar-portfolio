@@ -54,14 +54,16 @@ export function Sidebar() {
   const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    if (!open) return;
     const mobile = window.matchMedia("(max-width: 860px)");
-    if (!mobile.matches) return;
-    const toggleButton = toggleRef.current;
     const frame = document.getElementById("site-frame");
-    const previousOverflow = document.body.style.overflow;
-    const previousInert = frame?.inert ?? false;
-    document.body.style.overflow = "hidden";
+    const root = document.documentElement;
+    if (!open || !mobile.matches) {
+      root.removeAttribute("data-portfolio-menu-open");
+      if (frame) frame.inert = false;
+      return;
+    }
+    const toggleButton = toggleRef.current;
+    root.setAttribute("data-portfolio-menu-open", "");
     if (frame) frame.inert = true;
 
     const focusable = () =>
@@ -93,14 +95,18 @@ export function Sidebar() {
       }
     };
     const resized = () => {
-      if (!mobile.matches) setOpen(false);
+      if (!mobile.matches) {
+        root.removeAttribute("data-portfolio-menu-open");
+        if (frame) frame.inert = false;
+        setOpen(false);
+      }
     };
     window.addEventListener("keydown", keydown);
     mobile.addEventListener("change", resized);
     return () => {
       window.cancelAnimationFrame(focusFrame);
-      document.body.style.overflow = previousOverflow;
-      if (frame) frame.inert = previousInert;
+      root.removeAttribute("data-portfolio-menu-open");
+      if (frame) frame.inert = false;
       window.removeEventListener("keydown", keydown);
       mobile.removeEventListener("change", resized);
       if (mobile.matches) toggleButton?.focus();

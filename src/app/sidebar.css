@@ -18,7 +18,7 @@
   border-right: 1px solid var(--line);
   background: var(--panel-soft);
   overflow-y: auto;
-  overscroll-behavior: contain;
+  overscroll-behavior-y: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--line) transparent;
 }
@@ -246,6 +246,10 @@
   }
 }
 @media (max-width: 860px) {
+  html[data-portfolio-menu-open],
+  html[data-portfolio-menu-open] body {
+    overflow: hidden;
+  }
   .site-frame {
     margin-left: 0;
   }
@@ -286,6 +290,7 @@
     transform: translateX(-100%);
     visibility: hidden;
     transition: transform 180ms ease;
+    overscroll-behavior-y: contain;
   }
   .portfolio-sidebar.is-open {
     transform: translateX(0);
