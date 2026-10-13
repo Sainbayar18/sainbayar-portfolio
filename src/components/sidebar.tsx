@@ -161,10 +161,11 @@ export function Sidebar() {
           <div className="sidebar-identity">
             <div className="sidebar-portrait">
               <Image
-                src={profile.utest.photo}
+                src={profile.photo}
                 alt={profile.name}
                 width={76}
                 height={76}
+                unoptimized
               />
               <span aria-hidden="true">✳</span>
             </div>

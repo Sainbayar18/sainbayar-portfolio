@@ -444,6 +444,10 @@
   border-radius: 14px;
   overflow: hidden;
 }
+.project-image:has(.mangos-art) > .project-open {
+  background: #19271f;
+  color: #f0f0e7;
+}
 .dashboard-contact {
   margin-top: 35px;
   padding: 30px;

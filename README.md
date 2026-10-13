@@ -30,7 +30,7 @@ Edit **`src/lib/portfolio.ts`**:
 - `src/components/experience.tsx`: journey, skills, and course certificates, based on the user's public Upwork profile. Update dates and details here as needed.
 - `stack`: your actual tools and technologies.
 
-The portfolio itself is a real project. **Focus workspace** and **Steppe studio** are clearly labeled sample design concepts. No employers, dates, qualifications, or contact addresses have been invented.
+**Mangos** and the portfolio itself are real projects and appear in Recent Projects. Mangos links to its deployed website and uses a screenshot of its public homepage. **Focus workspace** and **Steppe studio** are clearly labeled sample design concepts. No employers, dates, qualifications, or contact addresses have been invented.
 
 Add résumé files to `public/` and set `profile.resume` to `/resume.pdf`. Missing LinkedIn, Instagram, and X links appear as labeled icon placeholders. Add the URLs to `profile` to activate them.
 
@@ -45,6 +45,7 @@ Add résumé files to `public/` and set `profile.resume` to `/resume.pdf`. Missi
 - Custom 404, page metadata, and favicon.
 - English / Mongolian toggle and persistent light / dark themes.
 - A personal sidebar with portrait, numbered navigation, Upwork/uTest links, and language/theme controls. On small screens it becomes a drawer with Escape dismissal, keyboard focus containment, and background scroll locking.
+- The sidebar portrait uses `profile.photo`, the public GitHub avatar. Upwork/uTest cards keep their own original profile images.
 - Responsive layouts, keyboard focus, skip link, and reduced-motion support.
 
 ## Contact form

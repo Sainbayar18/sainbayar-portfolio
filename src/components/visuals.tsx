@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 export function OrbitArt() {
   return (
     <div className="orbit-art" aria-hidden="true">
@@ -68,6 +69,22 @@ export function OrbitArt() {
   );
 }
 export function ProjectArt({ kind }: { kind: string }) {
+  if (kind === "mangos")
+    return (
+      <div
+        className="project-art mangos-art"
+        aria-hidden="true"
+        style={{ background: "#fffaf3" }}
+      >
+        <Image
+          src="/mangos-preview.jpg"
+          alt=""
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1180px) 60vw, 1000px"
+          style={{ objectFit: "contain", objectPosition: "center" }}
+        />
+      </div>
+    );
   if (kind === "focus")
     return (
       <div className="project-art focus-art" aria-hidden="true">

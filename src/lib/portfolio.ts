@@ -10,6 +10,7 @@ export const profile = {
   // Add your real details here. Empty values are deliberately not rendered as links.
   email: "",
   github: "https://github.com/Sainbayar18",
+  photo: "https://avatars.githubusercontent.com/u/150028437?v=4",
   linkedin: "",
   instagram: "",
   x: "",
@@ -54,8 +55,41 @@ export const stack = [
 ];
 export const projects = [
   {
-    slug: "personal-portfolio",
+    slug: "mangos",
     number: "01",
+    name: "Mangos",
+    category: "Web",
+    art: "mangos",
+    tags: ["Web app", "Manga reader", "Responsive UI"],
+    sample: false,
+    description: {
+      en: "A Mongolian manga reading app. Discover stories, explore the catalog, and read chapter by chapter.",
+      mn: "Монгол манга унших вэб апп. Шинэ түүх олж, мангагийн сангаас сонгон, бүлэг бүрээр уншина.",
+    },
+    overview: {
+      en: "Mangos brings manga discovery and reading into a Mongolian-language interface. The homepage highlights new chapters and featured stories, with search, genre filters, and a dedicated reading experience.",
+      mn: "Mangos нь манга хайх, сонгох, унших боломжийг монгол интерфэйст нэгтгэсэн. Нүүр хуудсанд онцлох манга, шинэ бүлгүүдийг харуулж, хайлт, жанрын шүүлтүүр болон тусдаа унших хуудастай.",
+    },
+    features: {
+      en: [
+        "Mongolian interface and manga catalog",
+        "Search and genre filtering",
+        "Featured stories and recently added chapters",
+        "Chapter reading and light / dark themes",
+      ],
+      mn: [
+        "Монгол интерфэйс, мангагийн сан",
+        "Хайлт болон жанраар шүүх",
+        "Онцлох манга, шинээр нэмэгдсэн бүлгүүд",
+        "Бүлэг унших, цайвар / бараан горим",
+      ],
+    },
+    liveUrl: "https://mangos-lime.vercel.app/",
+    sourceUrl: "",
+  },
+  {
+    slug: "personal-portfolio",
+    number: "02",
     name: "Personal portfolio",
     category: "Web",
     art: "portfolio",
@@ -88,7 +122,7 @@ export const projects = [
   },
   {
     slug: "focus-workspace",
-    number: "02",
+    number: "03",
     name: "Focus workspace",
     category: "UI",
     art: "focus",
@@ -119,7 +153,7 @@ export const projects = [
   },
   {
     slug: "steppe-studio",
-    number: "03",
+    number: "04",
     name: "Steppe studio",
     category: "UI",
     art: "steppe",
