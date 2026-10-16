@@ -139,6 +139,13 @@ const skills = [
 ];
 const certifications = [
   {
+    title: "Information Security",
+    issuer: "freeCodeCamp",
+    year: "2026",
+    url: "https://www.freecodecamp.org/certification/fccd5bb7ae0-2ee3-4db7-a7a8-6ed8222112b4/information-security-v7",
+    code: "SEC",
+  },
+  {
     title: "Legacy Responsive Web Design V8",
     issuer: "freeCodeCamp",
     year: "2026",
