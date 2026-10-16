@@ -70,28 +70,30 @@ export function Projects() {
             ja: "プロジェクトを絞り込む",
           })}
         >
-          {["All", "Web", "UI"].map((f) => (
-            <button
-              key={f}
-              className={
-                filter === f ? "filter-button active" : "filter-button"
-              }
-              aria-pressed={filter === f}
-              onClick={() => setFilter(f)}
-            >
-              {f === "All"
-                ? t({ en: "All work", ja: "すべて" })
-                : f === "Web"
-                  ? t({ en: "Development", ja: "開発" })
-                  : t({ en: "Design concepts", ja: "デザイン案" })}
-              <span>
-                {projects
-                  .filter((p) => f === "All" || p.category === f)
-                  .length.toString()
-                  .padStart(2, "0")}
-              </span>
-            </button>
-          ))}
+          {["All", ...new Set(projects.map((project) => project.category))].map(
+            (f) => (
+              <button
+                key={f}
+                className={
+                  filter === f ? "filter-button active" : "filter-button"
+                }
+                aria-pressed={filter === f}
+                onClick={() => setFilter(f)}
+              >
+                {f === "All"
+                  ? t({ en: "All work", ja: "すべて" })
+                  : f === "Web"
+                    ? t({ en: "Development", ja: "開発" })
+                    : t({ en: "Design concepts", ja: "デザイン案" })}
+                <span>
+                  {projects
+                    .filter((p) => f === "All" || p.category === f)
+                    .length.toString()
+                    .padStart(2, "0")}
+                </span>
+              </button>
+            ),
+          )}
         </div>
         <label className="search-field">
           <Search size={17} />
