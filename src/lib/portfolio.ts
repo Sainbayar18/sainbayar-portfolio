@@ -11,7 +11,7 @@ export const profile = {
   email: "",
   github: "https://github.com/Sainbayar18",
   photo: "https://avatars.githubusercontent.com/u/150028437?v=4",
-  linkedin: "",
+  linkedin: "https://www.linkedin.com/in/sainbayar-m-2249b040b/",
   instagram: "",
   x: "",
   resume: "",
